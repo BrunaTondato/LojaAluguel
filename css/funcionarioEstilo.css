@@ -1,0 +1,34 @@
+h1{
+	text-align: center;
+}
+#p2{
+	padding-bottom: 50px;
+}
+ 
+.row img:hover{
+	width: 80%;
+
+}
+.row h5{
+	color: #091b29;
+}
+#ideia{
+padding-top: 40px;
+}
+.container{
+	border: 1px solid #091b29;
+	background-color: #97a1a8;
+	
+}
+footer{
+	padding-top:20px;
+}
+a:link 
+{ 
+text-decoration:none; 
+}
+
+.form-group select{
+border-radius: 1px;
+
+}
