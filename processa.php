@@ -23,9 +23,21 @@ $result_funcionarios= "INSERT INTO funcionarios VALUES (NULL, '$nome', '$telefon
 $resultado_funcionarios = mysqli_query($conn, $result_funcionarios);
 
 if(mysqli_insert_id($conn)){
-    $_SESSION['msg'] = " <p style='color:green;'> Funcionario cadastrado com sucesso! </p>";
-    header("Location: funcionario.php");
+    ?>
+  <script>
+
+   alert("Funcionario cadastrado com sucesso!");
+   window.location="index.html";
+</script>
+
+    <?php
+    
 }else{
-    $_SESSION['msg'] = "<p style='color:red;'> Não foi possivel cadastrar o funcionário! </p>";
-    header("Location: funcionario.php");
+    ?>
+    <script>
+    alert("Não foi possivel cadastrar o funcionario! ");
+    window.location="funcionario.php";
+    </script>
+
+    <?php
 }

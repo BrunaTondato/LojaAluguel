@@ -10,9 +10,21 @@ $result_funcao= "INSERT INTO funcao (nome) VALUES ('$nome')";
 $resultado_funcao = mysqli_query($conn, $result_funcao);
 
 if(mysqli_insert_id($conn)){
-    $_SESSION['msg'] = " <p style='color:green;'> Função cadastrada com sucesso! </p>";
-    header("Location: funcao.php");
+    ?>
+  <script>
+
+   alert("Função cadastrada com sucesso!");
+   window.location="index.html";
+</script>
+
+    <?php
+    
 }else{
-    $_SESSION['msg'] = "<p style='color:red;'> Não foi possivel cadastrar a função! </p>";
-    header("Location: funcao.php");
+    ?>
+    <script>
+    alert("Não foi possivel cadastrar a função! ");
+    window.location="funcao.php";
+    </script>
+
+    <?php
 }

@@ -16,9 +16,21 @@ $result_fornecedores= "INSERT INTO fornecedores VALUES (NULL, '$nome', '$enderec
 $resultado_fornecedores = mysqli_query($conn, $result_fornecedores);
 
 if(mysqli_insert_id($conn)){
-    $_SESSION['msg'] = " <p style='color:green;'> Fornecedor cadastrado com sucesso! </p>";
-    header("Location: fornecedor.php");
+    ?>
+  <script>
+
+   alert("Fornecedor cadastrado com sucesso! ");
+   window.location="index.html";
+</script>
+
+    <?php
+    
 }else{
-    $_SESSION['msg'] = "<p style='color:red;'> Não foi possivel cadastrar o forncedor! </p>";
-    header("Location: fornecedor.php");
+    ?>
+    <script>
+    alert("Não foi possivel cadastrar o forncedor! ");
+    window.location="fornecedor.php";
+    </script>
+
+    <?php
 }
