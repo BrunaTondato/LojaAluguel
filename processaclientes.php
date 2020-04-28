@@ -19,9 +19,21 @@ $result_clientes= "INSERT INTO clientes VALUES (NULL, '$nome', '$cep', '$enderec
 $resultado_clientes = mysqli_query($conn, $result_clientes);
 
 if(mysqli_insert_id($conn)){
-    $_SESSION['msg'] = " <p style='color:green;'> Cliente cadastrado com sucesso! </p>";
-    header("Location: cliente.php");
+    ?>
+  <script>
+
+   alert("Cliente cadastrado com sucesso!");
+   window.location="index.html";
+</script>
+
+    <?php
+    
 }else{
-    $_SESSION['msg'] = "<p style='color:red;'> Não foi possivel cadastrar o cliente! </p>";
-    header("Location: cliente.php");
+    ?>
+    <script>
+    alert("Não foi possivel cadastrar o cliente! ");
+    window.location="cliente.php";
+    </script>
+
+    <?php
 }

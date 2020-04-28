@@ -121,13 +121,16 @@
 									</div>
 								</div>	
 										<!--div da direita-->
+										<!-- confirmação cadastrar -->
+										
 								<div class="col-md-6">
 										<!-- campos obrigatórios -->	
 										<div class="form-group" style="padding-top: 5px;">
 										<p>Verifique o campo assinalado</p>  
 										<p>* CAMPO OBRIGATÓRIO</p>
 										<button class="btn" type="submit" id="btn-enviar-contato" style="background-color: #091b29; color:#97a1a8; ">Cadastrar Função</button>
-										</div>
+										
+									</div>
 								</div>
 								
 							</div>	<!-- end row principal -->
