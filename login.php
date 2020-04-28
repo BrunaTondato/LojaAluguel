@@ -117,7 +117,7 @@
 										<h4>Localização</h4>
 										<p id="rua">Praça Antônio Carlos - Edifício Bias Maciel, Loja 2 </p>
 										<p id="rua">Machado - MG </p>
-										<a href="index.html"><div style="color: #fff" ><li class="fas fa-home mr-1" style="color:#97a1a8" ></li>Voltar</div></a> 
+										 
 
 									</div>
 								</section>
