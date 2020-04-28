@@ -30,6 +30,18 @@
 	
 	<link rel="shortcut icon" href="imagens/logo.png">
 
+	<!-- script utilizado para validar campo senha e confirma senha se são iguais -->
+			<script language="javascript">
+            function valida_dados(){
+                 if(form.confsenha.value != form.senha.value)
+                     {
+                        alert("Confirmação de senha diferente. Tente novamente.");
+                        document.form.confsenha.focus();
+                        return false;
+                     }
+            }
+            </script>
+
     <body>
 	<!-- erro ou sucesso na tela ao enviar -->
 	<?php
@@ -122,6 +134,32 @@
 					</div><!-- end col md-12 -->
 				</form> <!-- end formulario -->
 			</div> <!-- end container -->
+
+			<fieldset>
+             <legend>
+              <table>
+                 <tr>
+                    <td><h4>Gerenciar Função</h4></a></td>
+                 </tr>
+              </table>
+             </legend>
+             <article>
+                  <table class="table">
+                   <tr class="tr">
+                    <td class="tabletd">Editar</td>
+                    <td class="tabletd">Excluir</td>
+                    <td class="tabletd">Nome</td>
+                    <td class="tabletd">Código</td>
+                   
+                   </tr>
+                   <?php
+                        include "funcoesbd.php";
+                        $conexao = conecta_bd();
+                        lista_funcao_bd ($conexao);
+                   ?>
+                 </table>
+            </article>
+        </fieldset>
 		</section><!-- end formulario -->
 			<footer id="footer" class="no-margin">
 							<div class="footer-top text-center">
