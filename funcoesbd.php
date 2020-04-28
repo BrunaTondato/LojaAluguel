@@ -52,12 +52,66 @@ function lista_fornecedor_bd($conn){ //passa a connexão
 				height="20"></a>'.'</td>
 				<td class="td">'.$dados["nome"].'</td>
 				<td class="td">'.$dados["telefone"].'</td>
+				<td class="td">'.$dados["endereco"].'</td>
 			
 				</tr>';
 				
 				}
 				}
 /************************************************/
+
+function lista_funcionarios_bd($conn){ //passa a connexão
+	
+	$comando = "Select *
+				From funcionarios
+				order by nome";
+	$resultado = mysqli_query($conn,$comando);
+	while($dados = mysqli_fetch_array($resultado)){   //enquanto tiver dados me retorne
+				$idFuncionario = $dados["idFuncionario"];
+				
+				
+				echo '
+				<tr class="tr">
+				<td class="td">'.'<a href="edita_funcionarios.php?idFuncionario='.$idFuncionario.'"><img src="imagens/editar.png" alt="Consultar" title="Clique para editar os dados" width="20" height="20"></a>'.'</td>
+				<td class="td">'.'<a heref="javascript:func()" onclick="confirmacao('.$idFuncionario.')">
+				<img src="imagens/excluir.png" alt="Excluir"
+				title="Clique para excluir os dados" width="20"
+				height="20"></a>'.'</td>
+				<td class="td">'.$dados["nome"].'</td>
+				<td class="td">'.$dados["telefone"].'</td>
+				
+				</tr>';
+				
+				}
+				}
+				/************************************************/
+
+function lista_clientes_bd($conn){ //passa a connexão
+	
+	$comando = "Select *
+				From clientes
+				order by nome";
+	$resultado = mysqli_query($conn,$comando);
+	while($dados = mysqli_fetch_array($resultado)){   //enquanto tiver dados me retorne
+				$idClientes = $dados["idClientes"];
+				
+				
+				echo '
+				<tr class="tr">
+				<td class="td">'.'<a href="edita_clientes.php?idClientes='.$idClientes.'"><img src="imagens/editar.png" alt="Consultar" title="Clique para editar os dados" width="20" height="20"></a>'.'</td>
+				<td class="td">'.'<a heref="javascript:func()" onclick="confirmacao('.$idClientes.')">
+				<img src="imagens/excluir.png" alt="Excluir"
+				title="Clique para excluir os dados" width="20"
+				height="20"></a>'.'</td>
+				<td class="td">'.$dados["nome"].'</td>
+				<td class="td">'.$dados["telefone"].'</td>
+				<td class="td">'.$dados["endereco"].'</td>
+				</tr>';
+				
+				}
+				}
+/***************************************************************/
+
 function editar_funcao_bd($conexao,$idFuncao,$nome){
 	
 	$comando = "Select * 

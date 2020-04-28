@@ -1,10 +1,3 @@
-<!-- variavel global php para apresntar o erro ao usr -->
-<?php
-//session usada para o aviso se cadastrou com sucesso
-session_start();
-include_once("conexao.php");
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -34,6 +27,18 @@ include_once("conexao.php");
 	<!-- Favicon -->
 	
 	<link rel="shortcut icon" href="imagens/logo.png">
+
+	<!-- script utilizado para validar campo senha e confirma senha se são iguais -->
+			<script language="javascript">
+            function valida_dados(){
+                 if(form.confsenha.value != form.senha.value)
+                     {
+                        alert("Confirmação de senha diferente. Tente novamente.");
+                        document.form.confsenha.focus();
+                        return false;
+                     }
+            }
+            </script>
 
     <body>
 
@@ -195,6 +200,34 @@ include_once("conexao.php");
 						</div><!-- end row principal -->
 					</form> <!-- end formulario -->
 				</div> <!-- end container -->
+			<fieldset>
+             <legend>
+              <table>
+                 <tr>
+                    <td><h4>Gerenciar Clientes</h4></a></td>
+                 </tr>
+              </table>
+             </legend>
+             <article>
+                  <table class="table">
+                   <tr class="tr">
+                    <td class="tabletd">Editar</td>
+                    <td class="tabletd">Excluir</td>
+                    <td class="tabletd">Nome</td>
+                    <td class="tabletd">Telefone</td>
+                    <td class="tabletd">Endereço</td>
+                   
+                    
+                   
+                   </tr>
+                   <?php
+                        include "funcoesbd.php";
+                        $conexao = conecta_bd();
+                        lista_clientes_bd ($conexao);
+                   ?>
+                 </table>
+            </article>
+        </fieldset>
 			</section><!-- end formulario -->
 			<footer id="footer" class="no-margin">
 							<div class="footer-top text-center">

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -197,6 +195,7 @@
                     <td class="tabletd">Excluir</td>
                     <td class="tabletd">Nome</td>
                     <td class="tabletd">Telefone</td>
+                     <td class="tabletd">Endereço</td>
                    
                     
                    
