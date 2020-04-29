@@ -21,7 +21,7 @@
 	//acesso ao banco de dados
 	include "funcoesbd.php";
 	$conexao = conecta_bd();
-	$dados = consultaeditar_usu_bd($conexao,$codigo);
+	$dados = consulta_editar_funcao($conn,$codigo);
 		$idFuncao = $dados["idFuncao"];
 		$nome = $dados["nome"];
 		
@@ -45,17 +45,19 @@
 				<tr>
 					<td><label>Nome:</label></td>
 					<td><input type="text" required="required" name="nome" size="60" value="<?php echo  $nome;?>"></td>
-					<input name="id" type="hidden" id="idFuncao" value="<?php echo $idFuncao; ?>"> <!--Os campos hidden são usados para passar informações que não podem ser alteradas pelo usuário que estará inserindo informações no formulário.  -->
+					
 				</tr>
 				
 			</table>
 		  <br/>
+		  	<input type="hidden" name="idFuncao" value="<?php echo $idFuncao;?>">
 			<input type="submit" value="Alterar" class="botao"/>
 			<input type="reset" name="cancelar" value="Cancelar" class="botao" onclick="javascript: location.href='funcao.php';">
         </article>
     </form>
 	</fieldset>	
   </section>
+  
 
 </div>
 </body>

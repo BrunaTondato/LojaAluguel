@@ -7,7 +7,7 @@
 		
 		//acesso ao banco de dados
 		include "funcoesbd.php";
-		$conexao = conecta_bd();
+		$conn = conecta_bd();
 		editar_funcao_bd($conexao,$idFuncao,$nome);
 					
 ?>
