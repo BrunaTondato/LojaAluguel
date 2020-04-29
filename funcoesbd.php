@@ -6,7 +6,7 @@ function conecta_bd(){
 }	
 
 
-
+/********************************************************LISTAR**********************************************/
 function lista_funcao_bd($conn){ //passa a connexão
 	
 	$comando = "Select *
@@ -20,7 +20,7 @@ function lista_funcao_bd($conn){ //passa a connexão
 				echo '
 				<tr class="tr">
 				<td class="td">'.'<a href="edita_funcao.php?idFuncao='.$idFuncao.'"><img src="imagens/editar.png" alt="Consultar" title="Clique para editar os dados" width="20" height="20"></a>'.'</td>
-				<td class="td">'.'<a heref="javascript:func()" onclick="confirmacao('.$idFuncao.')">
+				<td class="td">'.'<a href="javascript:func()" onclick="confirmacao('.$idFuncao.')">
 				<img src="imagens/excluir.png" alt="Excluir"
 				title="Clique para excluir os dados" width="20"
 				height="20"></a>'.'</td>
@@ -32,7 +32,7 @@ function lista_funcao_bd($conn){ //passa a connexão
 				}
 
 
-/********************************************************************************/
+/*******************************************************/
 function lista_fornecedor_bd($conn){ //passa a connexão
 	
 	$comando = "Select *
@@ -46,7 +46,7 @@ function lista_fornecedor_bd($conn){ //passa a connexão
 				echo '
 				<tr class="tr">
 				<td class="td">'.'<a href="edita_fornecedor.php?idFornecedores='.$idFornecedores.'"><img src="imagens/editar.png" alt="Consultar" title="Clique para editar os dados" width="20" height="20"></a>'.'</td>
-				<td class="td">'.'<a heref="javascript:func()" onclick="confirmacao('.$idFornecedores.')">
+				<td class="td">'.'<a href="javascript:func()" onclick="confirmacao('.$idFornecedores.')">
 				<img src="imagens/excluir.png" alt="Excluir"
 				title="Clique para excluir os dados" width="20"
 				height="20"></a>'.'</td>
@@ -73,7 +73,7 @@ function lista_funcionarios_bd($conn){ //passa a connexão
 				echo '
 				<tr class="tr">
 				<td class="td">'.'<a href="edita_funcionarios.php?idFuncionario='.$idFuncionario.'"><img src="imagens/editar.png" alt="Consultar" title="Clique para editar os dados" width="20" height="20"></a>'.'</td>
-				<td class="td">'.'<a heref="javascript:func()" onclick="confirmacao('.$idFuncionario.')">
+				<td class="td">'.'<a href="javascript:func()" onclick="confirmacao('.$idFuncionario.')">
 				<img src="imagens/excluir.png" alt="Excluir"
 				title="Clique para excluir os dados" width="20"
 				height="20"></a>'.'</td>
@@ -84,7 +84,7 @@ function lista_funcionarios_bd($conn){ //passa a connexão
 				
 				}
 				}
-				/************************************************/
+/****************************************************/
 
 function lista_clientes_bd($conn){ //passa a connexão
 	
@@ -99,7 +99,7 @@ function lista_clientes_bd($conn){ //passa a connexão
 				echo '
 				<tr class="tr">
 				<td class="td">'.'<a href="edita_clientes.php?idClientes='.$idClientes.'"><img src="imagens/editar.png" alt="Consultar" title="Clique para editar os dados" width="20" height="20"></a>'.'</td>
-				<td class="td">'.'<a heref="javascript:func()" onclick="confirmacao('.$idClientes.')">
+				<td class="td">'.'<a href="javascript:func()" onclick="confirmacao('.$idClientes.')">
 				<img src="imagens/excluir.png" alt="Excluir"
 				title="Clique para excluir os dados" width="20"
 				height="20"></a>'.'</td>
@@ -110,16 +110,16 @@ function lista_clientes_bd($conn){ //passa a connexão
 				
 				}
 				}
-/***************************************************************/
+/*************************************************EDITAR*********************************************************************************/
 
-function editar_funcao_bd($conexao,$idFuncao,$nome){
+function editar_funcao_bd($conn,$idFuncao,$nome){
 	
 	$comando = "Select * 
 				From funcao
 				Where idFuncao = '$idFuncao'";
 					
 	//Executa o comando SQL 
-	$resultado = mysqli_query($conexao,$comando);
+	$resultado = mysqli_query($conn,$comando);
 	
 	//Retorna o número de linhas da consulta SQL (SELECT) executada
 	$linha = mysqli_num_rows($resultado);
@@ -127,35 +127,44 @@ function editar_funcao_bd($conexao,$idFuncao,$nome){
 	
 	$comando = "UPDATE funcao
 	SET nome = '$nome' where idFuncao = '$idFuncao'";
-	$resultado = mysqli_query($conexao,$comando);
+	$resultado = mysqli_query($conn,$comando);
 	echo "<script>window.location='funcao.php';alert('Prezado usuario os dados da funcao $nome, foram alterados com sucesso no sistema.');</script>"; 
 	}
 }
 /***********************************************************************************/
-function editar_fornecedor_bd($conn,$idFornecedores,$nome,$endereco,$telefone,$cnpj,$email,$cep){
+function consulta_editar_funcao($conn,$idFuncao){
+	$comando = "Select *
+				From funcao
+				where idFuncao = '$idFuncao'";
+	$resultado = mysqli_query($conn,$comando);
+	return $dados = mysqli_fetch_array($resultado);
+}
+/*******************************************EXCLUIR****************************************************************************************/
+function excluir_funcao_bd($conn,$idFuncao){
 	
-	$comando = "Select * 
-				From fornecedores
-				Where idFornecedores = '$idFornecedores'";
-					
-	//Executa o comando SQL 
-	$resultado = mysqli_query($conexao,$comando);
+	$comando = "Delete
+				From funcao
+				where idFuncao = '$idFuncao'";
+				
+	//Executa o comando SQL
+	$resultado = mysqli_query($conn,$comando);
 	
-	//Retorna o número de linhas da consulta SQL (SELECT) executada
-	$linha = mysqli_num_rows($resultado);
-	if($linha == 1){ //testa se a consulta retornou algum registro
+	//Para obter o numero de linhas afetadas por uma consulta INSERT, UPDATE, REPLACE ou DELETE, use myslq_affected_rows()
+	$linha = mysqli_affected_rows($conn);
 	
-	$comando = "UPDATE fornecedores
-	SET nome = '$nome' , endereco = '$endereco' , telefone = '$telefone' , 
-	cnpj = '$cnpj', email = '$email' , cep = '$cep'
-	where idFornecedores = '$idFornecedores'";
-	$resultado = mysqli_query($conexao,$comando);
-	echo "<script>window.location='fornecedor.php';alert('Prezado usuario os dados do(a) fornecedor $nome, foram alterados com sucesso no sistema.');</script>"; 
+	if($linha == 1) {
+		echo "<script>window.location='funcao.php';alert('Dados foram excluidos com sucesso do sistema.');</script>";
 	}
+	
+	else {
+		$errorMessage = error_get_last()['message'];
+		var_dump($errorMessage); exit;
+		echo "<script>window.location='funcao.php';alert('Os dados não foram excluidos do sistema.');</script>";
+	}
+			
 }
 
-
-
+/********************************************************/
 
 
 
