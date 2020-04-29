@@ -83,6 +83,9 @@ include_once("conexao.php");
                         <li class="nav-item pr-3">
                             <a class="nav-link" href="aluguel.php">Aluguel</a>
                         </li>
+                        <li class="nav-item pr-3">
+								<a class="nav-link" href="login.php">Sair</a>
+							</li>
                     </ul>
                 </div>
             </nav>
