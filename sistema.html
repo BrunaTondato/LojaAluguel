@@ -34,7 +34,7 @@
 				<!--Início da barra de menu -->
 
 				<nav class="navbar navbar-expand-lg no-margin">
-					<a class="navbar-brand d-none d-lg-block pr-5" href="login.php"><img id="logo"src="imagens/logo.png" alt=""></a>
+					<a class="navbar-brand d-none d-lg-block pr-5" href="index.html"><img id="logo"src="imagens/logo.png" alt=""></a>
 					<a class="navbar-brand font-weight-bold d-lg-none d-block pl-2 logo" href="#background">Ale's Noivas</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="fas fa-bars"></span>
@@ -44,39 +44,52 @@
 						<ul class="navbar-nav mr-auto">
 
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="login.php">Área restrita aos funcionários da loja.</a>
+								<a class="nav-link" href="index.html">Inicio</a>
 							</li>
 
+							<li class="nav-item pr-3">
+								<a class="nav-link" href="funcionario.php">Funcionários</a>
+								
+							</li>
+							<li class="nav-item pr-3">
+								<a class="nav-link" href="funcao.php">Funções</a>
+							</li>
+
+							<li class="nav-item pr-3">
+								<a class="nav-link" href="traje.php">Trajes</a>
+							</li>
+							<li class="nav-item pr-3">
+								<a class="nav-link" href="cliente.php">Clientes</a>
+							</li>
+							<li class="nav-item pr-3">
+								<a class="nav-link" href="fornecedor.php">Fornecedores</a>
+							</li>
+							<li class="nav-item pr-3">
+								<a class="nav-link" href="aluguel.php">Aluguel</a>
+							</li>
+							<li class="nav-item pr-3">
+								<a class="nav-link" href="login.php">Sair</a>
+							</li>
 						</ul>
 					</div>
 				</nav>
-				
+				<script> //ao clicar em um link o menu recolhe
+					$(document).ready(function () {
+						$(".navbar-nav li a").click(function(event) {
+							$(".navbar-collapse").collapse('hide');
+						});
+					});
+				</script>
         </header>
 
         <section id="formulario">
 			<div class="container">
 				<form method="POST" action="processafuncao.php">
 					<div class="col-md-12">
-						<h2>Login</h2>
-						<p>Preencha os campos abaixo para fazer o login.</p>
-						<div class="row">
-								<!-- dados pessoais -->
-								<div class="col-md-6">
-									<div class="form-group">
-										<label >Usuário</label>
-									<input type="text" name="login" value="" class="form-control" id="login"required><br>
-									</div>
-									<div class="form-group">
-										<label >Senha</label>
-									<input type="text" name="senha" value="" class="form-control" id="senha"required><br>
-									</div>
+						<h1>Ale's Noivas</h1>
+						<p>Aluguel de trajes de festa.</p>
+						<div class="row" style="padding-bottom: 15%;">
 								
-								
-										<!-- campos obrigatórios -->	
-										<div class="form-group" style="padding-top: 5px;">
-										
-										<button class="btn" type="submit" id="btn-enviar-contato" style="background-color: #091b29; color:#97a1a8; ">Acessar</button>
-										</div>
 								</div>
 								
 							</div>	<!-- end row principal -->
@@ -117,7 +130,7 @@
 										<h4>Localização</h4>
 										<p id="rua">Praça Antônio Carlos - Edifício Bias Maciel, Loja 2 </p>
 										<p id="rua">Machado - MG </p>
-										 
+										<a href="index.html"><div style="color: #fff" ><li class="fas fa-home mr-1" style="color:#97a1a8" ></li>Voltar</div></a> 
 
 									</div>
 								</section>

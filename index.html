@@ -6,16 +6,15 @@
 
     <meta name="author" content="Bruna e Natalia">
 	<meta name="description" content="Website trata sobre aluguel de trajes para festas">
-	<meta name="keywords" content="aluguel, vestidos"><!-- palavras que digitadas poderão levar ao seu site ser encontrado -->
+	<meta name="keywords" content="aluguel,vestidos"><!-- palavras que digitadas poderão levar ao seu site ser encontrado -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<!-- usada para reconhecer o bodstrap  é a tag mais importante a largura do site será igual a largura do dispositivo-->
 
 	 <!-- css -->
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/all.css">
-	<link rel="stylesheet" href="css/estilo.css">
-	
-	
+	<link rel="stylesheet" href="css/index.css">
+
 	<!-- JAVASCRIPT -->
 	<script src="js/jquery.js"></script>
 	<script src="js/popper.js"></script>
@@ -25,16 +24,19 @@
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="imagens/logo.png">
-    
-    <body>
-	<div class="container-fluid" style="background-color: #97a1a8;">
-		<!-- start header -->
-		<header> 
-		
+
+	
+	<body>
+		<div class="container-fluid">
+			<!-- start header -->
+
+			<header> 
+				
+
 				<!--Início da barra de menu -->
 
 				<nav class="navbar navbar-expand-lg no-margin">
-					<a class="navbar-brand d-none d-lg-block pr-5" href="index.html"><img id="logo"src="imagens/logo.png" alt=""></a>
+					<a class="navbar-brand d-none d-lg-block pr-5" href="index.html"><img id="logo" src="imagens/logo.png" alt=""></a>
 					<a class="navbar-brand font-weight-bold d-lg-none d-block pl-2 logo" href="#background">Ale's Noivas</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="fas fa-bars"></span>
@@ -44,64 +46,212 @@
 						<ul class="navbar-nav mr-auto">
 
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="index.html">Inicio</a>
+								<a class="nav-link" href="#loja">Ale's Noivas</a>
 							</li>
 
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="funcionario.php">Funcionários</a>
-								
+								<a class="nav-link" href="#aluguel">Aluguéis</a>
 							</li>
+				
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="funcao.php">Funções</a>
+								<a class="nav-link" href="#localizacao">Localização e atendimento</a>
 							</li>
 
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="traje.php">Trajes</a>
+								<a class="nav-link" href="#footer">Contato</a>
 							</li>
+
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="cliente.php">Clientes</a>
+								<a class="nav-link" href="login.php">Área restrita</a>
 							</li>
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="fornecedor.php">Fornecedores</a>
-							</li>
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="aluguel.php">Aluguel</a>
-							</li>
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="login.php">Sair</a>
-							</li>
+
 						</ul>
 					</div>
 				</nav>
 				<script> //ao clicar em um link o menu recolhe
-					$(document).ready(function () {
-						$(".navbar-nav li a").click(function(event) {
-							$(".navbar-collapse").collapse('hide');
-						});
+				$(document).ready(function () {
+					$(".navbar-nav li a").click(function(event) {
+						$(".navbar-collapse").collapse('hide');
 					});
-				</script>
-        </header>
+				});
+			</script>				
+		</header>
 
-        <section id="formulario">
-			<div class="container">
-				<form method="POST" action="processafuncao.php">
-					<div class="col-md-12">
-						<h1>Ale's Noivas</h1>
-						<p>Aluguel de trajes de festa.</p>
-						<div class="row" style="padding-bottom: 15%;">
-								
-								</div>
-								
-							</div>	<!-- end row principal -->
 
-					</div>
-				</form>
+		<!-- slideshow -->
+		<!-- start slideshow -->
+		<section id="slideshow" class="carousel slide carousel-fade no-margin" data-ride="carousel">
+
+			<ul class="carousel-indicators">
+				<li data-target="#slideshow" data-slide-to="0" class="active"></li>
+				<li data-target="#slideshow" data-slide-to="1"></li>
+				<li data-target="#slideshow" data-slide-to="2"></li>
+				<li data-target="#slideshow" data-slide-to="3"></li>
+				<li data-target="#slideshow" data-slide-to="4"></li>
+			</ul>
+
+			<div class="carousel-inner">
+				<figure class="carousel-item active">
+					<img src="imagens/vermelho.jpg" alt="" class="img-fluid" style="width: 100%;">
+						<figcaption class="carousel-caption d-none d-lg-block">
+						</figcaption>
+				</figure>
+
+				<figure class="carousel-item">
+					<img src="imagens/azul.jpg" alt="" class="img-fluid" style="width: 100%;">
+						<figcaption class="carousel-caption d-none d-lg-block">
+						</figcaption>
+				</figure>
+
+				<figure class="carousel-item">
+					<img src="imagens/dourado.jpg" alt="" class="img-fluid" style="width: 100%";>
+						<figcaption class="carousel-caption d-none d-lg-block">
+						</figcaption>
+				</figure>
+				<figure class="carousel-item">
+					<img src="imagens/verdeescuro.jpg" alt="" class="img-fluid" style="width: 100%;">
+						<figcaption class="carousel-caption d-none d-lg-block">
+						</figcaption>			
+				</figure>
+
+				<figure class="carousel-item">
+					<img src="imagens/verdeclaro.jpg" alt="" class="img-fluid" style="width: 100%;">
+						<figcaption class="carousel-caption d-none d-lg-block">
+						</figcaption>			
+				</figure>
+
+
 			</div>
-		</section>
-        <!-- fim header -->
-        
-        <!-- start footer -->
-		<footer id="footer" class="no-margin">
+
+						<a href="#slideshow" class="carousel-control-prev" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+						<a href="#slideshow" class="carousel-control-next" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+
+						<script>
+							$('#slideshow').carousel({
+								interval: 3500,
+								pause: false,
+							});
+						</script>
+					</section>
+					<!-- end slide show -->
+
+					<div>
+						<!-- section linha azul -->
+						<section id="loja">
+							<div class="row"> 
+								<div class="linha col-md-12 d-none d-md-block">		
+								</div>
+									<div class="linha1 col-md-12 d-md-none d-block">		
+									</div>
+							</div>
+
+						</section>
+						<!-- fim do section linha azul -->
+
+
+						<!--div Loja-->
+
+						<section class="loja">
+							<h1>Ale's Noivas</h1>
+
+							<div class="row col-md-12">
+
+								<article class="descricao col-md-6">
+									<p>O estabelecimento está situado no Edifício Bias Maciel,100 - Loja 2, em Machado. Atualmente a loja atende a um público variado composto por várias cidades do sul de Minas que vêm até a loja para alugar trajes para festas de formatura, de 15 anos e casamentos. Os clientes desfrutam de uma grande variedade de ternos, vestidos longos e longuetes para festas e vestidos de noivas.</p>
+									<p>O nome Ale's foi retirado do nome Alessandra, dona do estabelecimento e Noivas referente aos tipos de trajes que a loja oferece aos clientes. </p>
+								</article>
+
+								<div class="embed-responsive embed-responsive-16by9 col-md-6">
+									<video src="midia/terno.mp4" controls="" width="400" height="342" class="embed-responsive-item mx-auto d-block"></video>
+								</div>
+
+							</div>
+						</section> 
+</div>
+						<!-- fim da div -->
+
+
+						<!-- section loja -->
+						<section id="aluguel">
+
+							<!-- section trajes -->
+							<section id="trajes">
+
+								<h1>Aluguéis</h1>
+								
+
+								<div class="row col-md-12">
+
+
+									<div class="col-md-6">
+										<h4>Vestidos para formatura</h4>
+										<p>Temos diversos modelos, desde vestidos princesa até vestidos sereia todos lindíssimos, bordados com pedraria.</p>
+									
+
+										<h4>Vestidos para casamento</h4>
+										<p>Temos beliíssimos vestidos de noivas modelo princesa e uma grande variedade de cores de vestidos para madrinha, desde modelos lisos que são a tendência de 2020, até modelos de renda.</p>
+
+										<h4>Ternos</h4>
+										<p>Temos ternos para noivos e para padrinhos, nos tecidos cetim, brilho fosco e liso. Há também diversas cores de gravatas, sapatos e camisas sociais.</p>
+									</div>
+									<div class="col-md-6">
+										
+										<img src="imagens/pedraria.jpg" alt="" class="img-fluid card-img mx-auto d-block" style="width: 400px; height:360px;">
+										
+									</div>
+								</div>
+							</section> 
+	
+
+	
+<!-- section localização -->
+
+<section id="localizacao">
+	<h1>Localização e horário de atendimento</h1>
+
+	<div class="row col-md-12">
+
+		<div class="descricao col-md-6">
+			<p>A loja Ale's Noivas está situada na Praça Antônio Carlos no Centro de Machado-MG. O estabelecimento fica no Edifício Bias Maciel, 100 - Loja 2.</p>
+
+
+
+			<table class="horario">
+				<tr>
+					<th colspan="3">Horário de Funcionamento</th> <!--LINHA mesclada-->
+				</tr>
+				<tr> <!--LINHA-->
+					<td> Dias da semana</td> <!--Coluna-->
+					<td> Horário </td>
+					
+				</tr>
+				<tr> <!--LINHA-->
+					<td> Segunda à Sexta </td> <!--Coluna-->
+					<td> das 09:00h às 18:00h </td>
+					
+				</tr>
+				
+				<tr> <!--LINHA-->
+					<td> Sábado </td> <!--Coluna-->
+					<td> das 09:00h às 14:00h</td>
+				</tr>
+			</table>
+		</div>
+		<div class="col-md-6">
+			<p>Clique na imagem abaixo para saber como chegar até nós.</p>
+
+			<a target="_blank" href="https://goo.gl/maps/u1tAPQGuXMYKdu546" > <figure><img id="mapa" alt="" src="./imagens/loja.jpg" class="img-fluid mx-auto d-block"> </figure> </a>
+		</div>
+
+
+
+	</div>
+</section> 
+
+<!-- fim section localização -->
+
+<!-- footer start -->
+<footer id="footer" class="no-margin">
 							<div class="footer-top text-center">
 
 								<section class="row col-md-12">
@@ -137,12 +287,36 @@
 
 							</div>
         </footer>
-        <!-- fim footer -->
-		<div class="copyright no-margin">
+<div class="copyright no-margin">
 			<p id="copyright" style="color:#fff">Copyright 2020 - by Bruna Amorim e Natália Paulino</p> 
 		</div>
-	</div>	<!-- fim container fluid -->
-    </body>
+<a href="#top" class="fas fa-angle-double-up"></a>
+<!-- criando uma function para o icon fas fa-angle-double-up levar o usuário ao topo da pagina -->
+<script>
+	$(document).ready(function(){
+		$(window).scroll(function(){
+			if ($(this).scrollTop() > 100) {
+				$('a[href="#top"]').fadeIn();
+			} else {
+				$('a[href="#top"]').fadeOut();
+			}
+		});
+		$('a[href="#top"]').click(function(){
+			$('html, body').animate({scrollTop : 0},800);
+			return false;
+		});
+	});
+</script>
+<!-- end of footer -->
+
+</div>
+</body>
 </head>
 </html>
+
+
+
+
+
+
 

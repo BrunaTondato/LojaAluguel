@@ -47,8 +47,7 @@ include_once("conexao.php");
             <!--Início da barra de menu -->
 
             <nav class="navbar navbar-expand-lg no-margin">
-                <a class="navbar-brand d-none d-lg-block pr-5" href="index.html"><img id="logo" src="imagens/logo.png"
-                        alt=""></a>
+                <a class="navbar-brand d-none d-lg-block pr-5" href="sistema.html"><img id="logo"src="imagens/logo.png" alt=""></a>
                 <a class="navbar-brand font-weight-bold d-lg-none d-block pl-2 logo" href="#background">Ale's Noivas</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -60,7 +59,7 @@ include_once("conexao.php");
                     <ul class="navbar-nav mr-auto">
 
                         <li class="nav-item pr-3">
-                            <a class="nav-link" href="index.html">Inicio</a>
+                            <a class="nav-link" href="sistema.html">Inicio</a>
                         </li>
 
                         <li class="nav-item pr-3">
