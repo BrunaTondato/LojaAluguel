@@ -171,7 +171,7 @@ button{
 a[href="#top"]{
     padding:10px;
     position:fixed;
-    top: 75%;
+    top: 65%;
     right:30px;
     display:none;
     font-size: 30px;

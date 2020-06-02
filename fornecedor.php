@@ -74,15 +74,12 @@
 
 							<li class="nav-item pr-3">
 								<a class="nav-link" href="funcionario.php">Funcionários</a>
+								
 							</li>
-
 							<li class="nav-item pr-3">
 								<a class="nav-link" href="funcao.php">Funções</a>
 							</li>
 
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="traje.php">Trajes</a>
-							</li>
 							<li class="nav-item pr-3">
 								<a class="nav-link" href="cliente.php">Clientes</a>
 							</li>
@@ -90,11 +87,14 @@
 								<a class="nav-link" href="fornecedor.php">Fornecedores</a>
 							</li>
 							<li class="nav-item pr-3">
+								<a class="nav-link" href="traje.php">Trajes</a>
+							</li>
+							<li class="nav-item pr-3">
 								<a class="nav-link" href="aluguel.php">Aluguel</a>
 							</li>
 							<li class="nav-item pr-3">
 								<a class="nav-link" href="login.php">Sair</a>
-							</li>
+							</li>						
 						</ul>
 					</div>
 				</nav>

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -23,35 +21,13 @@
 	<script src="js/popper.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.mask.min.js"></script>
-	
+	<script src="js/jquery.mask.min.js"></script>	
 	<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
 	<!-- Favicon -->
 	
 	<link rel="shortcut icon" href="imagens/logo.png">
 
-	<!-- script utilizado para validar campo senha e confirma senha se são iguais -->
-			<script language="javascript">
-            function valida_dados(){
-                 if(form.confsenha.value != form.senha.value)
-                     {
-                        alert("Confirmação de senha diferente. Tente novamente.");
-                        document.form.confsenha.focus();
-                        return false;
-                     }
-            }
-            </script>
-
-    <body>
-	<!-- erro ou sucesso na tela ao enviar -->
-	<?php
-			if(isset($_SESSION['msg'])){
-				echo $_SESSION['msg'];
-				unset($_SESSION['msg']);
-			}
-		?>
-		
-
+	<body>
 	<div class="container-fluid" style="background-color: #97a1a8;">
         <!-- formulario -->
 		
@@ -76,14 +52,12 @@
 
 							<li class="nav-item pr-3">
 								<a class="nav-link" href="funcionario.php">Funcionários</a>
+								
 							</li>
 							<li class="nav-item pr-3">
 								<a class="nav-link" href="funcao.php">Funções</a>
 							</li>
 
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="traje.php">Trajes</a>
-							</li>
 							<li class="nav-item pr-3">
 								<a class="nav-link" href="cliente.php">Clientes</a>
 							</li>
@@ -91,11 +65,14 @@
 								<a class="nav-link" href="fornecedor.php">Fornecedores</a>
 							</li>
 							<li class="nav-item pr-3">
+								<a class="nav-link" href="traje.php">Trajes</a>
+							</li>
+							<li class="nav-item pr-3">
 								<a class="nav-link" href="aluguel.php">Aluguel</a>
 							</li>
 							<li class="nav-item pr-3">
 								<a class="nav-link" href="login.php">Sair</a>
-							</li>
+							</li>						
 						</ul>
 					</div>
 				</nav>
@@ -114,7 +91,7 @@
 					<div class="col-md-12">
 						<h1>Funções</h1>
 						<p>Preencha o campo abaixo para o cadastro de funções.</p>
-					
+					</div>
 							<div class="row">
 								<!-- dados pessoais -->
 								<div class="col-md-6">
@@ -199,6 +176,8 @@
 										<a href="index.html"><div style="color: #fff" ><li class="fas fa-home mr-1" style="color:#97a1a8" ></li>Voltar</div></a> 
 
 									</div>
+
+						<!-- end of footer -->
 								</section>
 
 							</div>
@@ -206,6 +185,23 @@
 							<div class="copyright no-margin">
 							<p id="copyright" style="color:#fff">Copyright 2020 - by Bruna Amorim e Natália Paulino</p> 
 							</div>
+								<a href="#top" class="fas fa-angle-double-up"></a>
+						<!-- criando uma function para o icon fas fa-angle-double-up levar o usuário ao topo da pagina -->
+						<script>
+							$(document).ready(function(){
+								$(window).scroll(function(){
+									if ($(this).scrollTop() > 100) {
+										$('a[href="#top"]').fadeIn();
+									} else {
+										$('a[href="#top"]').fadeOut();
+									}
+								});
+								$('a[href="#top"]').click(function(){
+									$('html, body').animate({scrollTop : 0},800);
+									return false;
+								});
+							});
+						</script>
 					
 
 					</div>

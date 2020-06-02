@@ -44,7 +44,7 @@
 						<ul class="navbar-nav mr-auto">
 
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="index.html">Inicio</a>
+								<a class="nav-link" href="sistema.html">Inicio</a>
 							</li>
 
 							<li class="nav-item pr-3">
@@ -56,13 +56,13 @@
 							</li>
 
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="traje.php">Trajes</a>
-							</li>
-							<li class="nav-item pr-3">
 								<a class="nav-link" href="cliente.php">Clientes</a>
 							</li>
 							<li class="nav-item pr-3">
 								<a class="nav-link" href="fornecedor.php">Fornecedores</a>
+							</li>
+							<li class="nav-item pr-3">
+								<a class="nav-link" href="traje.php">Trajes</a>
 							</li>
 							<li class="nav-item pr-3">
 								<a class="nav-link" href="aluguel.php">Aluguel</a>
@@ -141,6 +141,23 @@
 		<div class="copyright no-margin">
 			<p id="copyright" style="color:#fff">Copyright 2020 - by Bruna Amorim e Natália Paulino</p> 
 		</div>
+				<a href="#top" class="fas fa-angle-double-up"></a>
+						<!-- criando uma function para o icon fas fa-angle-double-up levar o usuário ao topo da pagina -->
+						<script>
+							$(document).ready(function(){
+								$(window).scroll(function(){
+									if ($(this).scrollTop() > 100) {
+										$('a[href="#top"]').fadeIn();
+									} else {
+										$('a[href="#top"]').fadeOut();
+									}
+								});
+								$('a[href="#top"]').click(function(){
+									$('html, body').animate({scrollTop : 0},800);
+									return false;
+								});
+							});
+						</script>
 	</div>	<!-- fim container fluid -->
     </body>
 </head>

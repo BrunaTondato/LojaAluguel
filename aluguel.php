@@ -59,34 +59,34 @@ include_once("conexao.php");
                 <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
 
-                        <li class="nav-item pr-3">
-                            <a class="nav-link" href="sistema.html">Inicio</a>
-                        </li>
+                       <li class="nav-item pr-3">
+                                <a class="nav-link" href="sistema.html">Inicio</a>
+                            </li>
 
-                        <li class="nav-item pr-3">
-                            <a class="nav-link" href="funcionario.php">Funcionários</a>
-                        </li>
+                            <li class="nav-item pr-3">
+                                <a class="nav-link" href="funcionario.php">Funcionários</a>
+                                
+                            </li>
+                            <li class="nav-item pr-3">
+                                <a class="nav-link" href="funcao.php">Funções</a>
+                            </li>
 
-                        <li class="nav-item pr-3">
-                            <a class="nav-link" href="funcao.php">Funções</a>
-                        </li>
-
-                        <li class="nav-item pr-3">
-                            <a class="nav-link" href="traje.php">Trajes</a>
-                        </li>
-                        <li class="nav-item pr-3">
-                            <a class="nav-link" href="cliente.php">Clientes</a>
-                        </li>
-                        <li class="nav-item pr-3">
-                            <a class="nav-link" href="fornecedor.php">Fornecedores</a>
-                        </li>
-                        <li class="nav-item pr-3">
-                            <a class="nav-link" href="aluguel.php">Aluguel</a>
-                        </li>
-                        <li class="nav-item pr-3">
-								<a class="nav-link" href="login.php">Sair</a>
-							</li>
-                    </ul>
+                            <li class="nav-item pr-3">
+                                <a class="nav-link" href="cliente.php">Clientes</a>
+                            </li>
+                            <li class="nav-item pr-3">
+                                <a class="nav-link" href="fornecedor.php">Fornecedores</a>
+                            </li>
+                            <li class="nav-item pr-3">
+                                <a class="nav-link" href="traje.php">Trajes</a>
+                            </li>
+                            <li class="nav-item pr-3">
+                                <a class="nav-link" href="aluguel.php">Aluguel</a>
+                            </li>
+                            <li class="nav-item pr-3">
+                                <a class="nav-link" href="login.php">Sair</a>
+                            </li>                       
+                        </ul>
                 </div>
             </nav>
             <script> //ao clicar em um link o menu recolhe
