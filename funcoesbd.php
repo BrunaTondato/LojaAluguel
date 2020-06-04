@@ -110,6 +110,32 @@ function lista_clientes_bd($conn){ //passa a connexão
 				
 				}
 				}
+/****************************************************/
+
+function lista_trajes_bd($conn){ //passa a connexão
+	
+	$comando = "Select *
+				From trajes
+				order by nome";
+	$resultado = mysqli_query($conn,$comando);
+	while($dados = mysqli_fetch_array($resultado)){   //enquanto tiver dados me retorne
+				$idTrajes = $dados["idTrajes"];
+				
+				
+				echo '
+				<tr class="tr">
+				<td class="td">'.'<a href="edita_trajes.php?idTrajes='.$idTrajes.'"><img src="imagens/editar.png" alt="Consultar" title="Clique para editar os dados" width="20" height="20"></a>'.'</td>
+				<td class="td">'.'<a href="javascript:func()" onclick="confirmacao('.$idTrajes.')">
+				<img src="imagens/excluir.png" alt="Excluir"
+				title="Clique para excluir os dados" width="20"
+				height="20"></a>'.'</td>
+				<td class="td">'.$dados["nome"].'</td>
+				<td class="td">'.$dados["descricao"].'</td>
+				
+				</tr>';
+				
+				}
+				}
 /*************************************************EDITAR*********************************************************************************/
 
 function editar_funcao_bd($conn,$idFuncao,$nome){

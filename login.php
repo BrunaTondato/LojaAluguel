@@ -55,7 +55,7 @@
 
         <section id="formulario">
 			<div class="container">
-				<form method="POST" action="processafuncao.php">
+				<form method="POST" >
 					<div class="col-md-12">
 						<h2>Login</h2>
 						<p>Preencha os campos abaixo para fazer o login.</p>
