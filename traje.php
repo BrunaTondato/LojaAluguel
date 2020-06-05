@@ -137,16 +137,13 @@
                             
                            
                             <div class="form-group">
-								<label for="status">Status*:</label>
-								<p><input type="radio" id="Disponivel" value="Disponivel">
-								<label for="status">Disponível</label>
-                          		<input type="radio" id="Alugado" value="Alugado">
-                           		<label for="status">Alugado</label>
-                           		<input type="radio" id="Lavando" value="Lavando"><label for="status">Lavando</label>
+								<label class="form-check-label" for="status">Status*:</label>
+								<p><input type="radio" name="status" value="disponivel"> Disponivel
+						        <input type="radio" name="status" value="alugado"> Alugado
+                           		<input type="radio" name="status" value="lavando"> Lavando
                             </div>
-                            
-							
-                            					
+				
+           				
                         </div>
 
                         <!--div da direita-->
