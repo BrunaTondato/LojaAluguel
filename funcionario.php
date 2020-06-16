@@ -1,3 +1,11 @@
+<!-- variavel global php para apresntar o erro ao usr -->
+<?php
+//session usada para o aviso se cadastrou com sucesso
+session_start();
+include_once("conexao.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -28,7 +36,7 @@
 	
 	<link rel="shortcut icon" href="imagens/logo.png">
 
-	<!-- script utilizado para validar campo senha e confirma senha se são iguais -->
+	<!-- script utilizado para validar campo senha e confirma senha se são iguais 
 			<script language="javascript">
             function valida_dados(){
                  if(form.confsenha.value != form.senha.value)
@@ -38,7 +46,7 @@
                         return false;
                      }
             }
-            </script>
+            </script>-->
 
 
     <body>

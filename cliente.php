@@ -1,3 +1,10 @@
+<!-- variavel global php para apresntar o erro ao usr -->
+<?php
+//session usada para o aviso se cadastrou com sucesso
+session_start();
+include_once("conexao.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

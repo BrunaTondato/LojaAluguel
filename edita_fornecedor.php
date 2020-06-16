@@ -1,7 +1,9 @@
-<?php
+<!-- 
+?php
 	include ("valida_session.php");
 	header('Content-type: text/html; charset=ISO-8859-1');
 ?>
+-->
 <!DOCTYPE html>
 <html>
 <head> 
@@ -11,6 +13,8 @@
 	<link rel="stylesheet" href="css/all.css">
 	<link rel="stylesheet" href="css/estilo.css">
   <script src="js/jquery-1.js" type="text/javascript"></script>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+	
 </head>
 
 
@@ -21,43 +25,95 @@
 	//acesso ao banco de dados
 	include "funcoesbd.php";
 	$conexao = conecta_bd();
-	$dados = consultaeditar_usu_bd($conexao,$codigo);
+	$dados = consulta_editar_fornecedor($conexao,$idFornecedores);
 		$idFornecedores = $dados["idFornecedores"];
 		$nome = $dados["nome"];
+		$endereco = $dados["endereco"];
+		$telefone = $dados["telefone"];
+		$cnpj = $dados["cnpj"];
+		$email = $dados["email"]; 
+		$cep = $dados["cep"];
 		
 		
  ?>
-<body>
-<div id="geral">
+<body style="background-color: #97a1a8;">
 
-  <section id="conteudo">
-	<fieldset>
-		 <legend>
-		  <table>
-			 <tr>
-				<td><h4>ALTERAR DADOS DO FORNECEDOR</h4></a></td>
-			 </tr>
-		  </table>
-		 </legend>
-		<form action="edfornecedor_envia.php" method="post" name="form" id="form" onSubmit="return valida_dados(this)">
-		 <article>
-			<table border="0" cellpadding="0" cellspacing="0">
-				<tr>
-					<td><label>Nome:</label></td>
-					<td><input type="text" required="required" name="nome" size="60" value="<?php echo  $nome;?>"></td>
-					<input name="id" type="hidden" id="idFornecedores" value="<?php echo $idFornecedores; ?>"> <!--Os campos hidden são usados para passar informações que não podem ser alteradas pelo usuário que estará inserindo informações no formulário.  -->
-				</tr>
+
+  <section id="formulario">
+  	<div class="container">
+
+  		<form action="edfornecedor_envia.php" method="post" name="form" id="form" onSubmit="return valida_dados(this)">
+
+
+			<div class="col-md-12">
 				
-			</table>
-		  <br/>
-			<input type="submit" value="Alterar" class="botao"/>
-			<input type="reset" name="cancelar" value="Cancelar" class="botao" onclick="javascript: location.href='fornecedor.php';">
-        </article>
-    </form>
-	</fieldset>	
-  </section>
+				<p><h2>Alterar dados do Fornecedor</h2></p>
+			 </div>
 
-</div>
+		<div class="row">
+						
+	<div class="col-md-6"> <!--div da esquerda-->
+							
+		
+		 <div class="form-group">
+					<label>Nome:</label>
+					<input type="text" required="required" name="nome" class="form-control" value="<?php echo  
+					$nome;?>">
+		</div>
+
+		<div class="form-group">
+					<label>Endereço completo*</label>
+					<input type="text" required="required" name="endereco" class="form-control" value="<?php echo 
+					$endereco;?>">
+        </div>
+
+        <div class="form-group">
+					<label>Telefone*</label>
+					<input type="text" required="required" name="telefone" class="form-control" value="<?php echo 
+					$telefone;?>">
+		</div>
+
+		<div class="form-group">
+					<label>CNPJ</label>
+					<input type="text" required="required" name="cnpj" class="form-control" value="<?php echo 
+					$cnpj;?>">
+        </div>
+
+    </div> <!--fim da div da esquerda-->
+
+    	<!--div da direita-->
+ 		<div class="col-md-6">
+
+        <div class="form-group">
+					<label>E-mail</label>
+					<input type="text" required="required" name="email" class="form-control" value="<?php echo 
+					$email;?>">
+		</div>
+        
+        <div class="form-group">                              
+					<label>CEP</label>
+					<input type="text" required="required" name="cep" class="form-control" value="<?php echo 
+					$cep;?>">
+                           
+		</div>
+				
+			<!-- div campos obrigatórios -->	
+			<div class="col-md-6 text-center mx-auto d-block" style="padding-top: 5px;">
+								<p>Verifique os campos assinalados</p>  
+								<p>* CAMPO OBRIGATÓRIO</p>
+		  	<input type="hidden" name="idFornecedores" value="<?php echo $idFornecedores;?> ">
+			<input type="submit" class="btn" value="Alterar" class="botao" style="background-color: #091b29; color:#97a1a8; ">
+			<input type="reset" class="btn" name="cancelar" value="Cancelar" class="botao" onclick="javascript: location.href='fornecedor.php';" style="background-color: #091b29; color:#97a1a8; ">
+			
+			</div> <!--fim da div campos obrigatórios -->	
+
+	</div><!-- end col direita  -->
+	</div><!-- end row principal -->
+	</form> <!-- end formulario -->
+	</div> <!-- end container -->
+       
+
+</section>
 </body>
 </html>
 

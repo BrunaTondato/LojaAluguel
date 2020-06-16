@@ -190,6 +190,42 @@ function excluir_funcao_bd($conn,$idFuncao){
 }
 
 /********************************************************/
+function editar_fornecedor_bd($conn,$idFornecedores,$nome,$endereco,$telefone,$cnpj,$email,$cep){
+	
+	$comando = "Select * 
+				From fornecedores
+				Where idFornecedores = '$idFornecedores'";
+					
+	//Executa o comando SQL 
+	$resultado = mysqli_query($conn,$comando);
+	
+	//Retorna o número de linhas da consulta SQL (SELECT) executada
+	$linha = mysqli_num_rows($resultado);
+	if($linha == 1){ //testa se a consulta retornou algum registro
+	
+	$comando = "UPDATE fornecedores
+	SET nome = '$nome',
+		endereco = '$endereco',
+		telefone = '$telefone', 
+		cnpj = '$cnpj', 
+		email = '$email', 
+		cep = '$cep' 
+		where idFornecedores = '$idFornecedores'";
+
+	$resultado = mysqli_query($conn,$comando);
+	echo "<script>window.location='fornecedor.php';alert('Prezado usuario os dados do fornecedor $nome, foram alterados com sucesso no sistema.');</script>"; 
+	}
+}
+/***********************************************************************************/
+function consulta_editar_fornecedor($conn,$idFornecedores){
+	$comando = "Select *
+				From fornecedores
+				where idFornecedores = '$idFornecedores'";
+	$resultado = mysqli_query($conn,$comando);
+	return $dados = mysqli_fetch_array($resultado);
+}
+/*******************************************EXCLUIR****************************************************************************************/
+
 
 
 
