@@ -20,8 +20,7 @@ function lista_funcao_bd($conn){ //passa a connexão
 				echo '
 				<tr class="tr">
 				<td class="td">'.'<a href="edita_funcao.php?idFuncao='.$idFuncao.'"><img src="imagens/editar.png" alt="Consultar" title="Clique para editar os dados" width="20" height="20"></a>'.'</td>
-				<td class="td">'.'<a href="javascript:func()" onclick="confirmacao('.$idFuncao.')">
-				<img src="imagens/excluir.png" alt="Excluir"
+				<td class="td">'. '<a href="exfuncao.php?idFuncao='.$idFuncao.'"><img src="imagens/excluir.png" alt="Excluir"
 				title="Clique para excluir os dados" width="20"
 				height="20"></a>'.'</td>
 				<td class="td">'.$dados["nome"].'</td>

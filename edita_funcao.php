@@ -1,7 +1,8 @@
-<?php
+<!-- 
+	<?php /*
 	include ("valida_session.php");
-	header('Content-type: text/html; charset=ISO-8859-1');
-?>
+	header('Content-type: text/html; charset=ISO-8859-1');*/
+?> -->
 <!DOCTYPE html>
 <html>
 <head> 
@@ -21,7 +22,7 @@
 	//acesso ao banco de dados
 	include "funcoesbd.php";
 	$conexao = conecta_bd();
-	$dados = consulta_editar_funcao($conn,$codigo);
+	$dados = consulta_editar_funcao($conexao,$idFuncao); //procurando os dados 
 		$idFuncao = $dados["idFuncao"];
 		$nome = $dados["nome"];
 		
