@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8"> <!-- traduz os código para caracteres latinos -->
+    <title>Ale's Noivas</title>
+
 <?php
 
 include_once("conexao.php");
@@ -14,7 +20,7 @@ if(mysqli_insert_id($conn)){
   <script>
 
    alert("Função cadastrada com sucesso!");
-   window.location="index.html";
+   window.location="funcao.php";
 </script>
 
     <?php
@@ -28,3 +34,6 @@ if(mysqli_insert_id($conn)){
 
     <?php
 }
+?>
+</head>
+</html>
