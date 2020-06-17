@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="css/all.css">
 	<link rel="stylesheet" href="css/estilo.css">
   <script src="js/jquery-1.js" type="text/javascript"></script>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 
 
@@ -28,41 +29,54 @@
 		
 		
  ?>
-<body>
-<div id="geral">
+<body style="background-color: #97a1a8;">
 
-  <section id="conteudo">
-	<fieldset>
-		 <legend>
-		  <table>
-			 <tr>
-				<td><h4>ALTERAR DADOS DO USUÁRIO</h4></a></td>
-			 </tr>
-		  </table>
-		 </legend>
-		<form action="edfuncao_envia.php" method="post" name="form" id="form" onSubmit="return valida_dados(this)">
-		 <article>
-			<table border="0" cellpadding="0" cellspacing="0">
-				<tr>
-					<td><label>Nome:</label></td>
-					<td><input type="text" required="required" name="nome" size="60" value="<?php echo  $nome;?>"></td>
-					
-				</tr>
-				
-			</table>
-		  <br/>
+ <section id="formulario">
+			<div class="container">
+	
+			<form action="edfuncao_envia.php" method="post" name="form" id="form" onSubmit="return valida_dados(this)">
+
+				<div class="col-md-12">
+
+				<h2>Alterar dados da função</h2>
+
+				</div>
+			 
+		<div class="row">
+
+	<div class="col-md-6"> <!-- div da esquerda-->
+		
+		<div class="form-group">  
+		<label>Nome:</label>
+		<input type="text" required="required" name="nome" class="form-control" value="<?php echo  $nome;?>">
+		</div>
+
+
+	</div> <!--fim da div da esquerda-->
+
+	<div class="col-md-6"> <!--div da direita-->
+
+	<div class="col-md-6 text-center mx-auto d-block" style="padding-top: 5px;">
+			<p>Verifique os campos assinalados</p>  
+			<p>* CAMPO OBRIGATÓRIO</p>
 		  	<input type="hidden" name="idFuncao" value="<?php echo $idFuncao;?>">
-			<input type="submit" value="Alterar" class="botao"/>
-			<input type="reset" name="cancelar" value="Cancelar" class="botao" onclick="javascript: location.href='funcao.php';">
-        </article>
-    </form>
-	</fieldset>	
-  </section>
-  
+			<input type="submit" class="btn" value="Alterar" class="botao" style="background-color: #091b29; color:#97a1a8; ">
+			<input type="reset" class="btn" name="cancelar" value="Cancelar" class="botao" onclick="javascript: location.href='funcao.php';" style="background-color: #091b29; color:#97a1a8; ">
+     </div> 
 
-</div>
+     </div><!--fim da div da direita-->
+
+	</div><!-- end row principal -->
+	</form> <!-- end formulario -->
+	</div> <!-- end container -->
+       
+
+</section>
 </body>
 </html>
+
+
+ 
 
 
 

@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8"> <!-- traduz os código para caracteres latinos -->
+    <title>Ale's Noivas</title>
 <?php
 //session usada para o aviso se cadastrou com sucesso
 session_start();
@@ -28,9 +33,12 @@ if(mysqli_insert_id($conn)){
 }else{
     ?>
     <script>
-    alert("Não foi possivel cadastrar o forncedor! ");
+    alert("Não foi possivel cadastrar o fornecedor! ");
     window.location="fornecedor.php";
     </script>
 
     <?php
 }
+?>
+</head>
+</html>

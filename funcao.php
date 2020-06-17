@@ -94,29 +94,28 @@
 					</div>
 							<div class="row">
 								<!-- dados pessoais -->
-								<div class="col-md-6">
-									<div class="form-group">
+								<div class="col-md-6"> <!-- div da esquerda-->
+										<div class="form-group">
 										<label >Nome*</label>
-									<input type="text" name="nome" value="" class="form-control" id="nome"required><br>
-									</div>
-								</div>	
-										<!--div da direita-->
-										<!-- confirmação cadastrar -->
+										<input type="text" name="nome" value="" class="form-control" id="nome"required><br>
+										</div>
+								</div>	<!-- fim div da esquerda-->
 										
-								<div class="col-md-6">
-										<!-- campos obrigatórios -->	
-										<div class="form-group" style="padding-top: 5px;">
-										<p>Verifique o campo assinalado</p>  
-										<p>* CAMPO OBRIGATÓRIO</p>
-										<button class="btn" type="submit" id="btn-enviar-contato" style="background-color: #091b29; color:#97a1a8; ">Cadastrar Função</button>
 										
+								<div class="col-md-6"> <!-- div da direita-->
+						
+								<!-- campos obrigatórios -->	
+									<div class="col-md-6 text-center mx-auto d-block" style="padding-top: 5px;">
+									<p>Verifique os campos assinalados</p>  
+									<p>* CAMPO OBRIGATÓRIO</p>
+									<button class="btn" type="submit" id="btn-enviar-contato" style="background-color: #091b29; color:#97a1a8; ">Cadastrar Função</button>
 									</div>
-								</div>
+								</div><!-- div da direita-->
 								
 							</div>	<!-- end row principal -->
-					</div><!-- end col md-12 -->
+					</div><!-- end container -->
 				</form> <!-- end formulario -->
-			</div> <!-- end container -->
+			</div> <!-- end container fluid -->
 
 			<fieldset>
              <legend>

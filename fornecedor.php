@@ -29,7 +29,7 @@
 	<link rel="shortcut icon" href="imagens/logo.png">
 
 
-	<!-- script utilizado para validar campo senha e confirma senha se são iguais -->
+	<!-- script utilizado para validar campo senha e confirma senha se são iguais
 			<script language="javascript">
             function valida_dados(){
                  if(form.confsenha.value != form.senha.value)
@@ -39,17 +39,17 @@
                         return false;
                      }
             }
-            </script>
+            </script>-->
 
     <body>
-	<!-- erro ou sucesso na tela ao enviar -->
+	<!-- erro ou sucesso na tela ao enviar 
 	<?php
-			if(isset($_SESSION['msg'])){
+			/*if(isset($_SESSION['msg'])){
 				echo $_SESSION['msg'];
 				unset($_SESSION['msg']);
-			}
+			}*/
 		?>
-
+		-->
 	<div class="container-fluid" style="background-color: #97a1a8;">
         <!-- formulario -->
 		
@@ -174,8 +174,7 @@
 								<p>* CAMPO OBRIGATÓRIO</p>
 								<button class="btn" type="submit" id="btn-enviar-contato" style="background-color: #091b29; color:#97a1a8; ">Cadastrar Fornecedor</button>
 								
-
-							</div>
+								</div>
 
 							</div>
 					

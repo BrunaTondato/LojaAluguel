@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8"> <!-- traduz os código para caracteres latinos -->
+    <title>Ale's Noivas</title>
 <?php
 //session usada para o aviso se cadastrou com sucesso
 session_start();
@@ -27,7 +32,7 @@ if(mysqli_insert_id($conn)){
   <script>
 
    alert("Funcionario cadastrado com sucesso!");
-   window.location="index.html";
+   window.location="funcionario.php";
 </script>
 
     <?php
@@ -41,3 +46,7 @@ if(mysqli_insert_id($conn)){
 
     <?php
 }
+?>
+</head>
+</html>
+
