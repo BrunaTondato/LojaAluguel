@@ -1,9 +1,18 @@
 <?php
 
+
 function conecta_bd(){
-	include_once("conexao.php");
+	$host = "localhost";
+	$user = "root";
+	$pass = "";
+	$db = "lojaaluguel";
+	
+	//Criar a conexao
+	$conn = mysqli_connect($host, $user, $pass, $db);
 	return $conn;
 }	
+
+
 
 
 /********************************************************LISTAR***************************************************************************/
