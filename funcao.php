@@ -138,7 +138,7 @@
                    <?php
                         include "funcoesbd.php";
                         $conexao = conecta_bd();
-                        lista_funcao_bd ($conexao);
+						lista_funcao_bd ($conexao);	
                    ?>
                  </table>
             </article>
