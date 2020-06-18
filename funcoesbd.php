@@ -54,7 +54,7 @@ function lista_fornecedor_bd($conn){ //passa a connexão
 				echo '
 				<tr class="tr">
 				<td class="td">'.'<a href="edita_fornecedor.php?idFornecedores='.$idFornecedores.'"><img src="imagens/editar.png" alt="Consultar" title="Clique para editar os dados" width="20" height="20"></a>'.'</td>
-				<td class="td">'.'<a href="javascript:func()" onclick="confirmacao('.$idFornecedores.')">
+				<td class="td">'. '<a href="confirmaFornecedor.php?idFuncao='.$idFornecedores.'"><img src="imagens/excluir.png" alt="Excluir"
 				<img src="imagens/excluir.png" alt="Excluir"
 				title="Clique para excluir os dados" width="20"
 				height="20"></a>'.'</td>
@@ -78,16 +78,15 @@ function lista_funcionarios_bd($conn){ //passa a connexão
 				$idFuncionario = $dados["idFuncionario"];
 				
 				
+				
 				echo '
 				<tr class="tr">
 				<td class="td">'.'<a href="edita_funcionarios.php?idFuncionario='.$idFuncionario.'"><img src="imagens/editar.png" alt="Consultar" title="Clique para editar os dados" width="20" height="20"></a>'.'</td>
-				<td class="td">'.'<a href="javascript:func()" onclick="confirmacao('.$idFuncionario.')">
-				<img src="imagens/excluir.png" alt="Excluir"
+				<td class="td">'. '<a href="confirmaFuncionario.php?idFuncionario='.$idFuncionario.'"><img src="imagens/excluir.png" alt="Excluir"
 				title="Clique para excluir os dados" width="20"
 				height="20"></a>'.'</td>
 				<td class="td">'.$dados["nome"].'</td>
-				<td class="td">'.$dados["telefone"].'</td>
-				
+				<td class="td">'.$dados["idFuncionario"].'</td>
 				</tr>';
 				
 				}
@@ -107,7 +106,7 @@ function lista_clientes_bd($conn){ //passa a connexão
 				echo '
 				<tr class="tr">
 				<td class="td">'.'<a href="edita_clientes.php?idClientes='.$idClientes.'"><img src="imagens/editar.png" alt="Consultar" title="Clique para editar os dados" width="20" height="20"></a>'.'</td>
-				<td class="td">'.'<a href="javascript:func()" onclick="confirmacao('.$idClientes.')">
+				<td class="td">'. '<a href="confirmaCliente.php?idFuncao='.$idClientes.'"><img src="imagens/excluir.png" alt="Excluir"
 				<img src="imagens/excluir.png" alt="Excluir"
 				title="Clique para excluir os dados" width="20"
 				height="20"></a>'.'</td>
@@ -115,6 +114,7 @@ function lista_clientes_bd($conn){ //passa a connexão
 				<td class="td">'.$dados["telefone"].'</td>
 				<td class="td">'.$dados["endereco"].'</td>
 				</tr>';
+				
 				
 				}
 				}
@@ -197,7 +197,79 @@ function excluir_funcao_bd($conn,$idFuncao){
 	}
 			
 }
+/*******************************************Funcionario****************************************************************************************/
+function excluir_funcionario_bd($conn,$idFuncionario){
+	
+	$comando = "Delete
+				From funcionarios
+				where idFuncionario = '$idFuncionario'";
+				
+	//Executa o comando SQL
+	$resultado = mysqli_query($conn,$comando);
+	
+	//Para obter o numero de linhas afetadas por uma consulta INSERT, UPDATE, REPLACE ou DELETE, use myslq_affected_rows()
+	$linha = mysqli_affected_rows($conn);
+	
+	if($linha == 1) {
+		echo "<script>window.location='funcionario.php';alert('Dados foram excluidos com sucesso do sistema.');</script>";
+	}
+	
+	else {
+		$errorMessage = error_get_last()['message'];
+		var_dump($errorMessage); exit;
+		echo "<script>window.location='funcao.php';alert('Os dados não foram excluidos do sistema.');</script>";
+	}
+			
+}
 
+/********************************************************/
+function excluir_cliente_bd($conn,$idClientes){
+	
+	$comando = "Delete
+				From clientes
+				where idClientes = '$idClientes'";
+				
+	//Executa o comando SQL
+	$resultado = mysqli_query($conn,$comando);
+	
+	//Para obter o numero de linhas afetadas por uma consulta INSERT, UPDATE, REPLACE ou DELETE, use myslq_affected_rows()
+	$linha = mysqli_affected_rows($conn);
+	
+	if($linha == 1) {
+		echo "<script>window.location='cliente.php';alert('Dados foram excluidos com sucesso do sistema.');</script>";
+	}
+	
+	else {
+		$errorMessage = error_get_last()['message'];
+		var_dump($errorMessage); exit;
+		echo "<script>window.location='cliente.php';alert('Os dados não foram excluidos do sistema.');</script>";
+	}
+			
+}
+/********************************************************/
+function excluir_fornecedor_bd($conn,$idFornecedores){
+	
+	$comando = "Delete
+				From fornecedores
+				where idFornecedores = '$idFornecedores'";
+				
+	//Executa o comando SQL
+	$resultado = mysqli_query($conn,$comando);
+	
+	//Para obter o numero de linhas afetadas por uma consulta INSERT, UPDATE, REPLACE ou DELETE, use myslq_affected_rows()
+	$linha = mysqli_affected_rows($conn);
+	
+	if($linha == 1) {
+		echo "<script>window.location='fornecedor.php';alert('Dados foram excluidos com sucesso do sistema.');</script>";
+	}
+	
+	else {
+		$errorMessage = error_get_last()['message'];
+		var_dump($errorMessage); exit;
+		echo "<script>window.location='fornecedor.php';alert('Os dados não foram excluidos do sistema.');</script>";
+	}
+			
+}
 /********************************************************/
 function editar_fornecedor_bd($conn,$idFornecedores,$nome,$endereco,$telefone,$cnpj,$email,$cep){
 	
