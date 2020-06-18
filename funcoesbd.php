@@ -144,6 +144,30 @@ function lista_trajes_bd($conn){ //passa a connexão
 				
 				}
 				}
+				/****************************************************/
+
+function lista_aluguel_bd($conn){ //passa a connexão
+	
+	$comando = "Select *
+				From alugueis
+				order by descricao";
+	$resultado = mysqli_query($conn,$comando);
+	while($dados = mysqli_fetch_array($resultado)){   //enquanto tiver dados me retorne
+				$idAlugueis = $dados["idAlugueis"];
+				
+				
+				echo '
+				<tr class="tr">
+				<td class="td">'.'<a href="edita_aluguel.php?idFuncao='.$idAlugueis.'"><img src="imagens/editar.png" alt="Consultar" title="Clique para editar os dados" width="20" height="20"></a>'.'</td>
+				<td class="td">'. '<a href="confirmaAluguel.php?idFuncao='.$idAlugueis.'"><img src="imagens/excluir.png" alt="Excluir"
+				title="Clique para excluir os dados" width="20"
+				height="20"></a>'.'</td>
+				<td class="td">'.$dados["descricao"].'</td>
+				<td class="td">'.$dados["idAlugueis"].'</td>
+				</tr>';
+				
+				}
+				}
 /*************************************************EDITAR*********************************************************************************/
 
 function editar_funcao_bd($conn,$idFuncao,$nome){
