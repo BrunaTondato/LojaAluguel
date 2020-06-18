@@ -155,10 +155,7 @@ include_once("conexao.php");
                             </div>
 
 
-                            <div class="form-group">
-									<label>Data*</label>
-									<input type="date" name="data" value="" class="form-control" id="data" required>
-							</div>
+                           
 
 							
                             
@@ -168,7 +165,10 @@ include_once("conexao.php");
                         <!--div da direita-->
  						<div class="col-md-6">
 																	
-													
+                         <div class="form-group">
+									<label>Data*</label>
+									<input type="date" name="data" value="" class="form-control" id="data" required>
+							</div>			
 								
 																
 									<div class="form-group">
