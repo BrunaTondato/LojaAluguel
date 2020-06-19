@@ -235,6 +235,7 @@ function consulta_editar_fornecedor($conn,$idFornecedores){
 	return $dados = mysqli_fetch_array($resultado);
 }
 
+<<<<<<< HEAD
 /********************************************************/
 function editar_traje_bd($conn,$idTrajes,$nome,$descricao,$status,$funcionario,$fornecedor){
 	
@@ -270,6 +271,8 @@ function consulta_editar_traje($conn,$idTrajes){
 	return $dados = mysqli_fetch_array($resultado);
 }
 
+=======
+>>>>>>> 56c4623c69a2cbc56f982c5cf117ea05438eaebd
 
 /********************************************************/
 function editar_funcionario_bd($conn,$idFuncionario,$nome,$telefone,$email,$endereco,$dataNascimento,$cpf,$rg,$dataAdmissao,$dataDemissao ,$salario,$login,$senha,$funcao){
@@ -453,6 +456,34 @@ function excluir_fornecedor_bd($conn,$idFornecedores){
 	}
 			
 }
+<<<<<<< HEAD
+=======
+/*******************************************EXCLUIR******************/
+function excluir_aluguel_bd($conn,$idAlugueis){
+	
+	$comando = "Delete
+				From alugueis
+				where idAlugueis = '$idAlugueis'";
+				
+	//Executa o comando SQL
+	$resultado = mysqli_query($conn,$comando);
+	
+	//Para obter o numero de linhas afetadas por uma consulta INSERT, UPDATE, REPLACE ou DELETE, use myslq_affected_rows()
+	$linha = mysqli_affected_rows($conn);
+	
+	if($linha == 1) {
+		echo "<script>window.location='aluguel.php';alert('Dados foram excluidos com sucesso do sistema.');</script>";
+	}
+	
+	else {
+		$errorMessage = error_get_last()['message'];
+		var_dump($errorMessage); exit;
+		echo "<script>window.location='aluguel.php';alert('Os dados não foram excluidos do sistema.');</script>";
+	}
+			
+}
+
+>>>>>>> 56c4623c69a2cbc56f982c5cf117ea05438eaebd
 
 
 
