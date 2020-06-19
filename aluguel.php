@@ -173,7 +173,7 @@ include_once("conexao.php");
 																
 									<div class="form-group">
 									<label>Funcionario*</label>
-										<select name="tipofuncionario">
+										<select name="funcionario">
 											<?php
 												$sql = "select * from funcionarios";
 												$resultado_funcionario = mysqli_query($conn, $sql);
@@ -187,7 +187,7 @@ include_once("conexao.php");
 									</div>
                                     <div class="form-group">
 									<label>Cliente*</label>
-										<select name="tipocliente">
+										<select name="cliente">
 											<?php
 												$sql = "select * from clientes";
 												$resultado_cliente = mysqli_query($conn, $sql);
@@ -201,12 +201,12 @@ include_once("conexao.php");
 									</div>
                                     <div class="form-group">
 									<label>Traje*</label>
-										<select name="tipotraje">
+										<select name="traje">
 											<?php
 												$sql = "select * from trajes";
 												$resultado_traje = mysqli_query($conn, $sql);
 												while( $dados = mysqli_fetch_array($resultado_traje)){
-													$codigo = $dados['idTraje'];
+													$codigo = $dados['idTrajes'];
 													$traje = $dados['nome'];
 													echo "<option value=$codigo>$traje</option>";	
 												}
@@ -248,7 +248,7 @@ include_once("conexao.php");
                     <td class="tabletd">Editar</td>
                     <td class="tabletd">Excluir</td>
                     <td class="tabletd">Traje</td>
-                    <td class="tabletd">Cliente</td>
+                    <td class="tabletd">Código</td>
                    
                     
                    
