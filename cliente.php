@@ -132,11 +132,7 @@ include_once("conexao.php");
 								<label >Nome*</label>
 								<input type="text" name="nome" value="" class="form-control" id="nome"required>
                             </div>
-                            <div class="form-group">
-								<label>CEP*</label>
-								<input type="text" name="cep" value="" class="form-control" id="cep" required>
-                            </div>
-                            <div class="form-group">
+                             <div class="form-group">
 							    <label>Endereço completo*</label>
 							    <input type="text" name="endereco" value="" class="form-control" id="endereco" required>
                             </div>
@@ -145,20 +141,31 @@ include_once("conexao.php");
 								<label>Celular*</label>
 								<input type="text" name="telefone" value="" class="form-control" id="telefone" required>
                             </div>
+
+                            <div class="form-group">
+									<label>Data de nascimento</label>
+									<input type="date" name="dataNascimento" value="" class="form-control" id="dataNascimento" >
+                            </div>
+                            
+
+                            
                             
                             					
                         </div>
 
                         <!--div da direita-->
  						<div class="col-md-6">
+
+                           
 							
-							<div class="form-group">
-									<label>Data de nascimento</label>
-									<input type="date" name="dataNascimento" value="" class="form-control" id="dataNascimento" >
-                            </div>
+							
                             <div class="form-group">
 								<label>CPF*</label>
 								<input type="text" name="cpf" value="" class="form-control" id="cpf" required>
+                            </div>
+                            <div class="form-group">
+								<label>CEP*</label>
+								<input type="text" name="cep" value="" class="form-control" id="cep" required>
                             </div>
                            
                             <div class="form-group">

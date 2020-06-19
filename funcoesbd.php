@@ -235,7 +235,7 @@ function consulta_editar_fornecedor($conn,$idFornecedores){
 	return $dados = mysqli_fetch_array($resultado);
 }
 
-<<<<<<< HEAD
+
 /********************************************************/
 function editar_traje_bd($conn,$idTrajes,$nome,$descricao,$status,$funcionario,$fornecedor){
 	
@@ -271,8 +271,7 @@ function consulta_editar_traje($conn,$idTrajes){
 	return $dados = mysqli_fetch_array($resultado);
 }
 
-=======
->>>>>>> 56c4623c69a2cbc56f982c5cf117ea05438eaebd
+
 
 /********************************************************/
 function editar_funcionario_bd($conn,$idFuncionario,$nome,$telefone,$email,$endereco,$dataNascimento,$cpf,$rg,$dataAdmissao,$dataDemissao ,$salario,$login,$senha,$funcao){
@@ -313,6 +312,47 @@ function consulta_editar_funcionario($conn,$idFuncionario){
 	$comando = "Select *
 				From funcionarios
 				where idFuncionario = '$idFuncionario'";
+	$resultado = mysqli_query($conn,$comando);
+	return $dados = mysqli_fetch_array($resultado);
+}
+
+
+
+/*********************************************************************/
+
+function editar_cliente_bd($conn,$idClientes,$nome,$endereco,$telefone,$dataNascimento,$cpf,$cep,$email,$funcionario){
+	
+	$comando = "Select * 
+				From clientes
+				Where idClientes = '$idClientes'";
+					
+	//Executa o comando SQL 
+	$resultado = mysqli_query($conn,$comando);
+	
+	//Retorna o número de linhas da consulta SQL (SELECT) executada
+	$linha = mysqli_num_rows($resultado);
+	if($linha == 1){ //testa se a consulta retornou algum registro
+	
+	$comando = "UPDATE clientes
+	SET nome = '$nome',
+		endereco = '$endereco',
+		telefone = '$telefone',
+		dataNascimento = '$dataNascimento',
+		cpf = '$cpf', 
+		cep = '$cep', 
+		email = '$email',
+		funcionario = '$funcionario'		
+		where idClientes = '$idClientes'";
+
+	$resultado = mysqli_query($conn,$comando);
+	echo "<script>window.location='cliente.php';alert('Prezado usuario os dados do(a) cliente $nome, foram alterados com sucesso no sistema.');</script>"; 
+	}
+}
+/***********************************************************************************/
+function consulta_editar_cliente($conn,$idClientes){
+	$comando = "Select *
+				From clientes
+				where idClientes = '$idClientes'";
 	$resultado = mysqli_query($conn,$comando);
 	return $dados = mysqli_fetch_array($resultado);
 }
@@ -456,8 +496,7 @@ function excluir_fornecedor_bd($conn,$idFornecedores){
 	}
 			
 }
-<<<<<<< HEAD
-=======
+
 /*******************************************EXCLUIR******************/
 function excluir_aluguel_bd($conn,$idAlugueis){
 	
@@ -483,7 +522,7 @@ function excluir_aluguel_bd($conn,$idAlugueis){
 			
 }
 
->>>>>>> 56c4623c69a2cbc56f982c5cf117ea05438eaebd
+
 
 
 
