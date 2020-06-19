@@ -87,7 +87,7 @@ include_once("conexao.php");
         </div>
         <div class="form-group">
 					<label>Data de Nascimento</label>
-					<input type="date" required="required" name="data" class="form-control" value="<?php echo 
+					<input type="date" required="required" name="dataNascimento" class="form-control" value="<?php echo 
 					$dataNascimento;?>">
 		</div>
 

@@ -302,7 +302,6 @@ function editar_aluguel_bd($conn,$idAlugueis,$descricao,$valor,$desconto,$valorF
 		desconto = '$desconto', 
 		valorFinal = '$valorFinal', 
 		data = '$data', 
-		cep = '$cep',
 		funcionario  = '$funcionario',
 		cliente = '$cliente',
 		traje = '$traje'
