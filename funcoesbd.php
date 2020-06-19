@@ -418,6 +418,31 @@ function excluir_fornecedor_bd($conn,$idFornecedores){
 	}
 			
 }
+/*******************************************EXCLUIR******************/
+function excluir_aluguel_bd($conn,$idAlugueis){
+	
+	$comando = "Delete
+				From alugueis
+				where idAlugueis = '$idAlugueis'";
+				
+	//Executa o comando SQL
+	$resultado = mysqli_query($conn,$comando);
+	
+	//Para obter o numero de linhas afetadas por uma consulta INSERT, UPDATE, REPLACE ou DELETE, use myslq_affected_rows()
+	$linha = mysqli_affected_rows($conn);
+	
+	if($linha == 1) {
+		echo "<script>window.location='aluguel.php';alert('Dados foram excluidos com sucesso do sistema.');</script>";
+	}
+	
+	else {
+		$errorMessage = error_get_last()['message'];
+		var_dump($errorMessage); exit;
+		echo "<script>window.location='aluguel.php';alert('Os dados não foram excluidos do sistema.');</script>";
+	}
+			
+}
+
 
 
 
