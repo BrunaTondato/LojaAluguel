@@ -48,7 +48,7 @@ include_once("conexao.php");
 
 			<div class="col-md-12">
 				
-				<p><h2>Alterar dados do Aluguel</h2></p>
+				<p><h2>Alterar dados do Traje</h2></p>
 			 </div>
 
 		<div class="row">
