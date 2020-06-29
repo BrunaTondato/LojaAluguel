@@ -25,7 +25,7 @@ if(mysqli_insert_id($conn)){
   <script>
 
    alert("Fornecedor cadastrado com sucesso! ");
-   window.location="index.html";
+   window.location="fornecedor.php";
 </script>
 
     <?php

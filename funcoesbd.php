@@ -1,4 +1,5 @@
 
+
 <?php
 
 
@@ -12,11 +13,21 @@ function conecta_bd(){
 	$conn = mysqli_connect($host, $user, $pass, $db);
 	return $conn;
 }	
+?>
 
 
 
+<!-- /********************************************************LISTAR********************************************/ -->
+<script>
+function Deletar(idFuncao) {
+   if (confirm("Tem certeza que deseja excluir essa função?")) {
+      location.href="exFuncao.php?idFuncao=idFuncao";
+   }
 
-/********************************************************LISTAR********************************************/
+}
+</script>
+
+<?php
 function lista_funcao_bd($conn){ //passa a connexão
 	
 	$comando = "Select *
@@ -30,9 +41,9 @@ function lista_funcao_bd($conn){ //passa a connexão
 				echo '
 				<tr class="tr">
 				<td class="td">'.'<a href="edita_funcao.php?idFuncao='.$idFuncao.'"><img src="imagens/editar.png" alt="Consultar" title="Clique para editar os dados" width="20" height="20"></a>'.'</td>
-				<td class="td">'. '<a href="confirmaFuncao.php?idFuncao='.$idFuncao.'"><img src="imagens/excluir.png" alt="Excluir"
-				title="Clique para excluir os dados" width="20"
-				height="20"></a>'.'</td>
+				
+				<td class="td">'. '<img src="imagens/excluir.png" alt="Excluir" onclick="Deletar(idFuncao)" title="Clique para excluir os dados" width="20"height="20"></a>'.'</td>
+				
 				<td class="td">'.$dados["nome"].'</td>
 				<td class="td">'.$dados["idFuncao"].'</td>
 				</tr>';
@@ -55,7 +66,7 @@ function lista_fornecedor_bd($conn){ //passa a connexão
 				echo '
 				<tr class="tr">
 				<td class="td">'.'<a href="edita_fornecedor.php?idFornecedores='.$idFornecedores.'"><img src="imagens/editar.png" alt="Consultar" title="Clique para editar os dados" width="20" height="20"></a>'.'</td>
-				<td class="td">'. '<a href="confirmaFornecedor.php?idFuncao='.$idFornecedores.'"><img src="imagens/excluir.png" alt="Excluir"
+				<td class="td">'. '<a href="confirmaFornecedor.php?idFornecedores='.$idFornecedores.'"><img src="imagens/excluir.png" alt="Excluir"
 				<img src="imagens/excluir.png" alt="Excluir"
 				title="Clique para excluir os dados" width="20"
 				height="20"></a>'.'</td>
@@ -107,7 +118,7 @@ function lista_clientes_bd($conn){ //passa a connexão
 				echo '
 				<tr class="tr">
 				<td class="td">'.'<a href="edita_clientes.php?idClientes='.$idClientes.'"><img src="imagens/editar.png" alt="Consultar" title="Clique para editar os dados" width="20" height="20"></a>'.'</td>
-				<td class="td">'. '<a href="confirmaCliente.php?idFuncao='.$idClientes.'"><img src="imagens/excluir.png" alt="Excluir"
+				<td class="td">'. '<a href="confirmaCliente.php?idClientes='.$idClientes.'"><img src="imagens/excluir.png" alt="Excluir"
 				<img src="imagens/excluir.png" alt="Excluir"
 				title="Clique para excluir os dados" width="20"
 				height="20"></a>'.'</td>

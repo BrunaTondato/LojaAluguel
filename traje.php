@@ -130,6 +130,12 @@ include_once("conexao.php");
 						<!-- dados pessoais -->
 						<div class="col-md-6">
 							<div class="form-group">
+								<label >Código*</label>
+								<input type="text" name="idTrajes" value="" class="form-control" id="idTrajes"required>
+                            </div>
+
+						
+							<div class="form-group">
 								<label >Nome*</label>
 								<input type="text" name="nome" value="" class="form-control" id="nome"required>
                             </div>
