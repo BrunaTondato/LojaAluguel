@@ -1,6 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8"> <!-- traduz os código para caracteres latinos -->
+    <title>Ale's Noivas</title>
+
+    <meta name="author" content="Bruna e Natalia">
+	<meta name="description" content="Website trata sobre aluguel de trajes para festas">
+	<meta name="keywords" content="aluguel, vestidos"><!-- palavras que digitadas poderão levar ao seu site ser encontrado -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+	<!-- usada para reconhecer o bodstrap  é a tag mais importante a largura do site será igual a largura do dispositivo-->
+
+	 <!-- css -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/all.css">
+	<link rel="stylesheet" href="css/estilo.css">
+	
+	
+	<!-- JAVASCRIPT -->
+	<script src="js/jquery.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.mask.min.js"></script>
+	
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+	<!-- Favicon -->
+	
+	<link rel="shortcut icon" href="imagens/logo.png">
 
 
-<?php
+<!-- inicio do php -->
+
+<?php 
 
 
 function conecta_bd(){
@@ -20,10 +51,13 @@ function conecta_bd(){
 <!-- /********************************************************LISTAR********************************************/ -->
 <script>
 function Deletar(idFuncao) {
-   if (confirm("Tem certeza que deseja excluir essa função?")) {
-      location.href="exFuncao.php?idFuncao=idFuncao";
+	let id = document.getElementById("idFuncao").innerHTML = idFuncao;
+	if (Number(id) > 0) {
+		let confirmar = confirm("Tem certeza que deseja excluir essa função?");
+      	if(confirmar == true){
+			location.href="exFuncao.php?idFuncao=" + id;
+		}			  
    }
-
 }
 </script>
 
@@ -42,7 +76,7 @@ function lista_funcao_bd($conn){ //passa a connexão
 				<tr class="tr">
 				<td class="td">'.'<a href="edita_funcao.php?idFuncao='.$idFuncao.'"><img src="imagens/editar.png" alt="Consultar" title="Clique para editar os dados" width="20" height="20"></a>'.'</td>
 				
-				<td class="td">'. '<img src="imagens/excluir.png" alt="Excluir" onclick="Deletar(idFuncao)" title="Clique para excluir os dados" width="20"height="20"></a>'.'</td>
+				<td class="td" id="idFuncao">'. '<img src="imagens/excluir.png" alt="Excluir" onclick="Deletar('.$idFuncao.')" title="Clique para excluir os dados" width="20"height="20"></a>'.'</td>
 				
 				<td class="td">'.$dados["nome"].'</td>
 				<td class="td">'.$dados["idFuncao"].'</td>
@@ -53,6 +87,7 @@ function lista_funcao_bd($conn){ //passa a connexão
 
 
 /*******************************************************/
+
 function lista_fornecedor_bd($conn){ //passa a connexão
 	
 	$comando = "Select *
@@ -426,11 +461,8 @@ function excluir_funcao_bd($conn,$idFuncao){
 	if($linha == 1) {
 		echo "<script>window.location='funcao.php';alert('Dados foram excluidos com sucesso do sistema.');</script>";
 	}
-	
 	else {
-		$errorMessage = error_get_last()['message'];
-		var_dump($errorMessage); exit;
-		echo "<script>window.location='funcao.php';alert('Os dados não foram excluidos do sistema.');</script>";
+		echo "<script>window.location='funcao.php';alert('Atenção! Não foi posivel excluir os dados,  pois os mesmos estão em uso em outro cadastro.');</script>";
 	}
 			
 }
@@ -452,9 +484,7 @@ function excluir_funcionario_bd($conn,$idFuncionario){
 	}
 	
 	else {
-		$errorMessage = error_get_last()['message'];
-		var_dump($errorMessage); exit;
-		echo "<script>window.location='funcao.php';alert('Os dados não foram excluidos do sistema.');</script>";
+		echo "<script>window.location='funcao.php';alert('Atenção! Não foi posivel excluir os dados,  pois os mesmos estão em uso em outro cadastro.');</script>";
 	}
 			
 }
@@ -477,9 +507,8 @@ function excluir_cliente_bd($conn,$idClientes){
 	}
 	
 	else {
-		$errorMessage = error_get_last()['message'];
-		var_dump($errorMessage); exit;
-		echo "<script>window.location='cliente.php';alert('Os dados não foram excluidos do sistema.');</script>";
+		
+		echo "<script>window.location='cliente.php';alert('Atenção! Não foi posivel excluir os dados,  pois os mesmos estão em uso em outro cadastro.');</script>";
 	}
 			
 }
@@ -501,9 +530,8 @@ function excluir_fornecedor_bd($conn,$idFornecedores){
 	}
 	
 	else {
-		$errorMessage = error_get_last()['message'];
-		var_dump($errorMessage); exit;
-		echo "<script>window.location='fornecedor.php';alert('Os dados não foram excluidos do sistema.');</script>";
+		
+		echo "<script>window.location='fornecedor.php';alert('Atenção! Não foi posivel excluir os dados,  pois os mesmos estão em uso em outro cadastro.');</script>";
 	}
 			
 }
@@ -526,20 +554,13 @@ function excluir_aluguel_bd($conn,$idAlugueis){
 	}
 	
 	else {
-		$errorMessage = error_get_last()['message'];
-		var_dump($errorMessage); exit;
-		echo "<script>window.location='aluguel.php';alert('Os dados não foram excluidos do sistema.');</script>";
+		
+		echo "<script>window.location='aluguel.php';alert('Atenção! Não foi posivel excluir os dados,  pois os mesmos estão em uso em outro cadastro.');</script>";
 	}
 			
 }
 
-
-
-
-
-
-
-
-		
-		
+	// final do php
 ?>
+</head>
+			</html>

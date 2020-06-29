@@ -5,7 +5,7 @@
 
 
 	/* recebe o código da funcao que terá as informações excluidas */
-	$codigo = $_GET["idFuncao"];
+	$codigo = (int)$_GET["idFuncao"];
 	//acesso ao banco de dados
 	include "funcoesbd.php";
 	$conn = conecta_bd();
