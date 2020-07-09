@@ -124,7 +124,7 @@ include_once("conexao.php");
 
 
 					<div class="col-md-12">
-						<h1>Aluguéis</h1>
+						<h1>Aluguel</h1>
 						<p>Preencha os campos abaixo para o cadastro do aluguel.</p>
 					</div>
 					<div class="row">
