@@ -1,0 +1,22 @@
+#p2{
+	padding-bottom: 50px;
+}
+ 
+.row img:hover{
+	width: 80%;
+
+}
+section #formulario{
+	padding-bottom: 20px;
+
+}
+
+#ideia{
+padding-top: 40px;
+}
+
+a:link 
+{ 
+text-decoration:none; 
+}
+

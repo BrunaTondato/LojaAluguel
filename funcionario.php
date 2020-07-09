@@ -78,7 +78,7 @@ include_once("conexao.php");
 						<ul class="navbar-nav mr-auto">
 
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="sistema.html">Inicio</a>
+								<a class="nav-link" href="sistema.php">Inicio</a>
 							</li>
 
 							<li class="nav-item pr-3">
@@ -233,7 +233,7 @@ include_once("conexao.php");
 								<button class="btn" type="submit" id="btn-enviar-contato" style="background-color: #091b29; color:#97a1a8; ">Cadastrar Funcionário</button>
 								
 
-							</div>
+								</div>
 							
 								
 
@@ -312,7 +312,8 @@ include_once("conexao.php");
 							</div>
 						</footer>
 							<div class="copyright no-margin">
-							<p id="copyright" style="color:#fff">Copyright 2020 - by Bruna Amorim e Natália Paulino</p> 
+							<p id="copyright" style="color:#fff">Copyright 2020 </p> 
+							<p>By Bruna Amorim e Natália Paulino</p>
 							</div>
 						<a href="#top" class="fas fa-angle-double-up"></a>
 						<!-- criando uma function para o icon fas fa-angle-double-up levar o usuário ao topo da pagina -->
