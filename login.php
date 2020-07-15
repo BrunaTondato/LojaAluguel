@@ -115,6 +115,7 @@
 										<!-- campos obrigatórios -->	
 									<div class="col-md-6 text-center mx-auto d-block" style="padding-top: 5px;">
 										
+<<<<<<< HEAD
 									<!--<input type="submit" class="btn" type="submit" id="btn-enviar-contato" style="background-color: #091b29; color:#97a1a8; ">-->
 
 									<button class="btn" type="submit" id="btn-enviar-contato" style="background-color: #091b29; color:#97a1a8; ">Entrar</button>
@@ -122,6 +123,10 @@
 									
 									</div>
 									
+=======
+									<button class="btn" type="submit" id="btn-enviar-contato" style="background-color: #091b29; color:#97a1a8; ">Acessar</button>
+									</div>
+>>>>>>> 8673d6da4a786cd9a1ff2ef79cccb2f4e18b224a
 
 								</div>
 								

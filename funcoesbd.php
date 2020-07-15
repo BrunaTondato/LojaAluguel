@@ -44,6 +44,7 @@ function conecta_bd(){
 	$conn = mysqli_connect($host, $user, $pass, $db);
 	return $conn;
 }	
+<<<<<<< HEAD
 
 /********************************************************LOGAR********************************************/
  
@@ -56,11 +57,31 @@ function consulta_usu_bd($login,$senha,$conn){
 	//Retorna o numero de linhas da consulta SQL (SELECT) executada
 	$linha = mysqli_num_rows($resultado);
 	return $linha;
+=======
+?>
+<!-- /********************************************************LOGAR********************************************/ -->
+<script>
+function consulta_usu_bd($login,$senha,$conn){
+	//Comando SQL
+	$comando = "Select * From funcionario Where login = '$login' and senha = '$senha'";
+	//Executa os comandos SQL
+	$resultado = mysqli_query($conn,$comando);
+	 
+	//Retorna o numero de linhas da consulta SQL (SELECT) executada
+	$linha = mysqli_num_rows($resultado);
+	return $linha;
+
+}
+>>>>>>> 8673d6da4a786cd9a1ff2ef79cccb2f4e18b224a
 
 }
 
+<<<<<<< HEAD
 
 ?>
+=======
+</script>
+>>>>>>> 8673d6da4a786cd9a1ff2ef79cccb2f4e18b224a
 <!-- /********************************************************LISTAR********************************************/ -->
 <script>
 function Deletar(idFuncao) {
