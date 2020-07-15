@@ -44,10 +44,23 @@ function conecta_bd(){
 	$conn = mysqli_connect($host, $user, $pass, $db);
 	return $conn;
 }	
+
+/********************************************************LOGAR********************************************/
+ 
+function consulta_usu_bd($login,$senha,$conn){
+	//Comando SQL
+	$comando = "Select * From funcionario Where login = '$login' and senha = '$senha'";
+	//Executa os comandos SQL
+	$resultado = mysqli_query($conn,$comando);
+	 
+	//Retorna o numero de linhas da consulta SQL (SELECT) executada
+	$linha = mysqli_num_rows($resultado);
+	return $linha;
+
+}
+
+
 ?>
-
-
-
 <!-- /********************************************************LISTAR********************************************/ -->
 <script>
 function Deletar(idFuncao) {
@@ -300,8 +313,8 @@ function editar_traje_bd($conn,$idTrajes,$nome,$descricao,$status,$funcionario,$
 	SET nome = '$nome',
 		descricao = '$descricao',
 		status = '$status',
-		funcionario = '$funcionario', 
-		fornecedor = '$fornecedor' 
+		Funcionarios_idFuncionario = '$funcionario', 
+		Fornecedores_idFornecedores = '$fornecedor' 
 		where idTrajes = '$idTrajes'";
 
 	$resultado = mysqli_query($conn,$comando);
@@ -346,7 +359,7 @@ function editar_funcionario_bd($conn,$idFuncionario,$nome,$telefone,$email,$ende
 		salario = '$salario',
 		login = '$login',
 		senha = '$senha',
-		funcao = '$funcao'		
+		Funcao_idFuncao = '$funcao'		
 		where idFuncionario = '$idFuncionario'";
 
 	$resultado = mysqli_query($conn,$comando);
@@ -387,9 +400,9 @@ function editar_cliente_bd($conn,$idClientes,$nome,$endereco,$telefone,$dataNasc
 		cpf = '$cpf', 
 		cep = '$cep', 
 		email = '$email',
-		funcionario = '$funcionario'		
+		Funcionarios_idFuncionario = '$funcionario'		
 		where idClientes = '$idClientes'";
-
+		//var_dump($comando);exit;
 	$resultado = mysqli_query($conn,$comando);
 	echo "<script>window.location='cliente.php';alert('Prezado usuario os dados do(a) cliente $nome, foram alterados com sucesso no sistema.');</script>"; 
 	}
@@ -426,9 +439,9 @@ function editar_aluguel_bd($conn,$idAlugueis,$descricao,$valor,$desconto,$valorF
 		desconto = '$desconto', 
 		valorFinal = '$valorFinal', 
 		data = '$data', 
-		funcionario  = '$funcionario',
-		cliente = '$cliente',
-		traje = '$traje'
+		Funcionarios_idFuncionario  = '$funcionario',
+		Clientes_idClientes = '$cliente',
+		Trajes_idTrajes = '$traje'
 		where idAlugueis = '$idAlugueis'";
 
 	$resultado = mysqli_query($conn,$comando);

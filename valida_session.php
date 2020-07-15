@@ -2,17 +2,17 @@
 <?php
 session_start();
  
-//Caso o usuário não esteja autenticado, limpa os dados e redireciona
-if ( !isset($_SESSION['usuario']) and !isset($_SESSION['senha']) ) {
+//Caso o usuÃ¡rio nÃ£o esteja autenticado, limpa os dados e redireciona
+if ( !isset($_SESSION['login']) and !isset($_SESSION['senha']) ) {
     //Limpa
     unset ($_SESSION['login']);
     unset ($_SESSION['senha']);
 	
-	//Destrói
+	//DestrÃ³i
     session_destroy();
  
-    //Redireciona para a página de autenticação
-    header ("Location:index.php");
+    //Redireciona para a pÃ¡gina de autenticaÃ§Ã£o
+    header ("Location:login.php");
 }
 
 

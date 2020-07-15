@@ -27,6 +27,7 @@
 	<link rel="shortcut icon" href="imagens/logo.png">
     
     <body>
+
 	<div class="container-fluid" style="background-color: #97a1a8;">
 		<!-- start header -->
 		<header> 
@@ -34,7 +35,7 @@
 				<!--Início da barra de menu -->
 
 				<nav class="navbar navbar-expand-lg no-margin">
-					<a class="navbar-brand d-none d-lg-block pr-5" href="login.php"><img id="logo"src="imagens/logo.png" alt=""></a>
+					<a class="navbar-brand d-none d-lg-block pr-5" href="index.html"><img id="logo" src="imagens/logo.png" alt=""></a>
 					<a class="navbar-brand font-weight-bold d-lg-none d-block pl-2 logo" href="#background">Ale's Noivas</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="fas fa-bars"></span>
@@ -44,44 +45,89 @@
 						<ul class="navbar-nav mr-auto">
 
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="login.php">Área restrita aos funcionários da loja.</a>
+								<a class="nav-link" href="index.html">Início</a>
+							</li>
+
+							<li class="nav-item pr-3">
+								<a class="nav-link" href="index.html#loja">Ale's Noivas</a>
+							</li>
+
+							<li class="nav-item pr-3">
+								<a class="nav-link" href="index.html#aluguel">Aluguéis</a>
+							</li>
+				
+							<li class="nav-item pr-3">
+								<a class="nav-link" href="index.html#localizacao">Localização e atendimento</a>
+							</li>
+
+							<li class="nav-item pr-3">
+								<a class="nav-link" href="index.html#footer">Contato</a>
+							</li>
+
+							<li class="nav-item pr-3">
+								<a class="nav-link" href="login.php">Área restrita</a>
 							</li>
 
 						</ul>
 					</div>
 				</nav>
+				<script> //ao clicar em um link o menu recolhe
+				$(document).ready(function () {
+					$(".navbar-nav li a").click(function(event) {
+						$(".navbar-collapse").collapse('hide');
+					});
+				});
+			</script>	
 				
         </header>
 
         <section id="formulario">
 			<div class="container">
-				<form method="POST" >
+				
 					<div class="col-md-12">
 						<h2>Login</h2>
-						<p>Preencha os campos abaixo para fazer o login.</p>
+						<p>Esta área é restrita as funcionários da loja. Preencha os campos abaixo para fazer o login.</p>
+
+						
+					</div>
+						<form action="validalogin.php" method="POST">
 						<div class="row">
+							<div class="col-md-6 text-center mx-auto d-block">
+								<div class="form-group">
+								<img id="imagem" src="imagens/cadeado.jpg">
+								</div>
+							</div>
+						
 								<!-- dados pessoais -->
 								<div class="col-md-6">
 									<div class="form-group">
+
 										<label >Usuário</label>
-									<input type="text" name="login" value="" class="form-control" id="login"required><br>
+										<input type="text" name="login" value="" class="form-control" id="login"required><br>
 									</div>
+
 									<div class="form-group">
 										<label >Senha</label>
-									<input type="text" name="senha" value="" class="form-control" id="senha"required><br>
+										<input type="password" class="form-control" required name="senha" maxlength="8" size="40">
 									</div>
 								
 								
 										<!-- campos obrigatórios -->	
-										<div class="form-group" style="padding-top: 5px;">
+									<div class="col-md-6 text-center mx-auto d-block" style="padding-top: 5px;">
 										
-										<button class="btn" type="submit" id="btn-enviar-contato" style="background-color: #091b29; color:#97a1a8; ">Acessar</button>
-										</div>
+									<!--<input type="submit" class="btn" type="submit" id="btn-enviar-contato" style="background-color: #091b29; color:#97a1a8; ">-->
+
+									<button class="btn" type="submit" id="btn-enviar-contato" style="background-color: #091b29; color:#97a1a8; ">Entrar</button>
+
+									
+									</div>
+									
+
 								</div>
 								
-							</div>	<!-- end row principal -->
+						</div>	<!-- end row principal -->
 
-					</div>
+					
 				</form>
 			</div>
 		</section>
@@ -126,7 +172,8 @@
         </footer>
         <!-- fim footer -->
 		<div class="copyright no-margin">
-			<p id="copyright" style="color:#fff">Copyright 2020 - by Bruna Amorim e Natália Paulino</p> 
+			<p id="copyright" style="color:#fff">Copyright 2020 </p> 
+			<p>By Bruna Amorim e Natália Paulino</p>
 		</div>
 	</div>	<!-- fim container fluid -->
     </body>
