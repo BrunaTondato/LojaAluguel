@@ -230,8 +230,8 @@ function lista_aluguel_bd($conn){ //passa a connexão
 				<td class="td">'. '<a href="confirmaAluguel.php?idAlugueis='.$idAlugueis.'"><img src="imagens/excluir.png" alt="Excluir"
 				title="Clique para excluir os dados" width="20"
 				height="20"></a>'.'</td>
+				<td class="td">'.$dados["Trajes_idTrajes"].'</td>
 				<td class="td">'.$dados["descricao"].'</td>
-				<td class="td">'.$dados["idAlugueis"].'</td>
 				</tr>';
 				
 				}

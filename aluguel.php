@@ -249,8 +249,8 @@ require "valida_session.php";
                    <tr class="tr">
                     <td class="tabletd">Editar</td>
                     <td class="tabletd">Excluir</td>
-                    <td class="tabletd">Traje</td>
-                    <td class="tabletd">Código</td>
+                    <td class="tabletd">Código do Traje</td>
+                    <td class="tabletd">Descrição do Aluguel</td>
                    
                     
                    
