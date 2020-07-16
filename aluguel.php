@@ -251,6 +251,7 @@ require "valida_session.php";
                     <td class="tabletd">Excluir</td>
                     <td class="tabletd">Código do Traje</td>
                     <td class="tabletd">Descrição do Aluguel</td>
+					<td class="tabletd">Data</td>
                    
                     
                    

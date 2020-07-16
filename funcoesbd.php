@@ -205,8 +205,10 @@ function lista_trajes_bd($conn){ //passa a connexão
 				<img src="imagens/excluir.png" alt="Excluir"
 				title="Clique para excluir os dados" width="20"
 				height="20"></a>'.'</td>
+				<td class="td">'.$dados["idTrajes"].'</td>
 				<td class="td">'.$dados["nome"].'</td>
 				<td class="td">'.$dados["descricao"].'</td>
+				<td class="td">'.$dados["status"].'</td>
 				
 				</tr>';
 				
@@ -232,6 +234,7 @@ function lista_aluguel_bd($conn){ //passa a connexão
 				height="20"></a>'.'</td>
 				<td class="td">'.$dados["Trajes_idTrajes"].'</td>
 				<td class="td">'.$dados["descricao"].'</td>
+				<td class="td">'.$dados["data"].'</td>
 				</tr>';
 				
 				}

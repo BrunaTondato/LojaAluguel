@@ -228,8 +228,10 @@ require "valida_session.php";
                    <tr class="tr">
                     <td class="tabletd">Editar</td>
                     <td class="tabletd">Excluir</td>
+					<td class="tabletd">Código</td>
                     <td class="tabletd">Nome</td>
                     <td class="tabletd">Descrição</td>
+					<td class="tabletd">Status</td>
                    
                     
                    
