@@ -1,9 +1,14 @@
-<!-- variavel global php para apresntar o erro ao usr -->
 <?php
 //session usada para o aviso se cadastrou com sucesso
-require "valida_session.php";
+session_start();
+include_once("conexao.php");
+
 ?>
 
+<?php
+require "valida_session.php";
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -100,7 +105,7 @@ require "valida_session.php";
 								<a class="nav-link" href="aluguel.php">Aluguel</a>
 							</li>
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="logout.php">Sair</a>
+								<a class="nav-link" href="login.php">Sair</a>
 							</li>						
 						</ul>
 					</div>
@@ -153,10 +158,8 @@ require "valida_session.php";
 								<p><input type="radio" name="status" value="disponivel"> Disponivel
 						        <input type="radio" name="status" value="alugado"> Alugado
                            		<input type="radio" name="status" value="lavando"> Lavando
-                            </div>
-				
-           				
-                        </div>
+						     </div>
+					</div>	
 
                         <!--div da direita-->
  						<div class="col-md-6">
