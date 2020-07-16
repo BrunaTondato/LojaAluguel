@@ -29,6 +29,7 @@
 	<link rel="shortcut icon" href="imagens/logo.png">
 
 
+
 <!-- inicio do php -->
 
 <?php 
@@ -44,56 +45,42 @@ function conecta_bd(){
 	$conn = mysqli_connect($host, $user, $pass, $db);
 	return $conn;
 }	
-<<<<<<< HEAD
 
 /********************************************************LOGAR********************************************/
  
 function consulta_usu_bd($login,$senha,$conn){
 	//Comando SQL
-	$comando = "Select * From funcionario Where login = '$login' and senha = '$senha'";
+	$comando = "Select * From funcionarios Where login = '$login' and senha = '$senha'";
 	//Executa os comandos SQL
 	$resultado = mysqli_query($conn,$comando);
 	 
 	//Retorna o numero de linhas da consulta SQL (SELECT) executada
 	$linha = mysqli_num_rows($resultado);
+	/*$id = $linha->fetch();
+	$_SESSION['id'] = $id['idFuncionario'];*/
 	return $linha;
-=======
-?>
-<!-- /********************************************************LOGAR********************************************/ -->
-<script>
-function consulta_usu_bd($login,$senha,$conn){
-	//Comando SQL
-	$comando = "Select * From funcionario Where login = '$login' and senha = '$senha'";
-	//Executa os comandos SQL
+
+}
+/***************************************************************************************************************/
+function login($login,$senha,$conn){
+
+	$comando = "Select * From funcionarios Where login = '$login' and senha = '$senha'";
 	$resultado = mysqli_query($conn,$comando);
-	 
-	//Retorna o numero de linhas da consulta SQL (SELECT) executada
-	$linha = mysqli_num_rows($resultado);
-	return $linha;
 
-}
->>>>>>> 8673d6da4a786cd9a1ff2ef79cccb2f4e18b224a
 
-}
-
-<<<<<<< HEAD
+		if(mysqli_num_rows($resultado) > 0){
+			foreach ($resultado as $key => $value) {
+				$_SESSION['id'] = $value['idFuncionario'];
+			}
+			return true;
+		}else{
+			return false;
+			exit();
+		}        
+	}
 
 ?>
-=======
-</script>
->>>>>>> 8673d6da4a786cd9a1ff2ef79cccb2f4e18b224a
 <!-- /********************************************************LISTAR********************************************/ -->
-<script>
-function Deletar(idFuncao) {
-	let id = document.getElementById("idFuncao").innerHTML = idFuncao;
-	if (Number(id) > 0) {
-		let confirmar = confirm("Tem certeza que deseja excluir essa função?");
-      	if(confirmar == true){
-			location.href="exFuncao.php?idFuncao=" + id;
-		}			  
-   }
-}
-</script>
 
 <?php
 function lista_funcao_bd($conn){ //passa a connexão
@@ -429,6 +416,42 @@ function editar_cliente_bd($conn,$idClientes,$nome,$endereco,$telefone,$dataNasc
 	}
 }
 /***********************************************************************************/
+
+/*********************************************************************/
+
+function editar_cliente_bd_restricao($conn,$idClientes,$nome,$endereco,$telefone,$dataNascimento,$cpf,$cep,$email,$funcionario){
+	
+	$comando = "Select * 
+				From clientes
+				Where idClientes = '$idClientes'";
+					
+	//Executa o comando SQL 
+	$resultado = mysqli_query($conn,$comando);
+	
+	//Retorna o número de linhas da consulta SQL (SELECT) executada
+	$linha = mysqli_num_rows($resultado);
+	if($linha == 1){ //testa se a consulta retornou algum registro
+	
+	$comando = "UPDATE clientes
+	SET nome = '$nome',
+		endereco = '$endereco',
+		telefone = '$telefone',
+		dataNascimento = '$dataNascimento',
+		cpf = '$cpf', 
+		cep = '$cep', 
+		email = '$email',
+		Funcionarios_idFuncionario = '$funcionario'		
+		where idClientes = '$idClientes'";
+		//var_dump($comando);exit;
+	$resultado = mysqli_query($conn,$comando);
+	echo "<script>window.location='cliente_tela_funcionario.php';alert('Prezado usuario os dados do(a) cliente $nome, foram alterados com sucesso no sistema.');</script>"; 
+	}
+}
+/**********************************************************************/
+
+
+
+
 function consulta_editar_cliente($conn,$idClientes){
 	$comando = "Select *
 				From clientes
@@ -596,5 +619,15 @@ function excluir_aluguel_bd($conn,$idAlugueis){
 
 	// final do php
 ?>
-</head>
-			</html>
+<!---------------------------------------------------------------------------------------------------------->
+<script>
+function Deletar(idFuncao) {
+	let id = document.getElementById("idFuncao").innerHTML = idFuncao;
+	if (Number(id) > 0) {
+		let confirmar = confirm("Tem certeza que deseja excluir essa função?");
+      	if(confirmar == true){
+			location.href="exFuncao.php?idFuncao=" + id;
+		}			  
+   }
+}
+</script>

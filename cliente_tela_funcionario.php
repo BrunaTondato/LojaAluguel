@@ -4,9 +4,9 @@
 //session usada para o aviso se cadastrou com sucesso
 session_start();
 include_once("conexao.php");
+
 require "valida_session.php";
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,7 +23,8 @@ require "valida_session.php";
 	 <!-- css -->
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/all.css">
-	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="css/eventoEstilo.css">	
+	<link rel="stylesheet" href="css/login-funcionario.css">	
 	
 	
 	<!-- JAVASCRIPT -->
@@ -38,7 +39,7 @@ require "valida_session.php";
 	
 	<link rel="shortcut icon" href="imagens/logo.png">
 
-	<!-- script utilizado para validar campo senha e confirma senha se são iguais 
+	<!-- script utilizado para validar campo senha e confirma senha se são iguais -->
 			<script language="javascript">
             function valida_dados(){
                  if(form.confsenha.value != form.senha.value)
@@ -48,18 +49,11 @@ require "valida_session.php";
                         return false;
                      }
             }
-            </script>-->
-
+            </script>
 
     <body>
 
-		<!-- erro ou sucesso na tela ao enviar -->
-		<?php
-			if(isset($_SESSION['msg'])){
-				echo $_SESSION['msg'];
-				unset($_SESSION['msg']);
-			}
-		?>
+		
 
 	<div class="container-fluid" style="background-color: #97a1a8;">
         <!-- formulario -->
@@ -80,28 +74,18 @@ require "valida_session.php";
 						<ul class="navbar-nav mr-auto">
 
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="sistema.php">Inicio</a>
+								<a class="nav-link" href="sistema_funcionario.php">Inicio</a>
 							</li>
 
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="funcionario.php">Funcionários</a>
-								
+								<a class="nav-link" href="cliente_tela_funcionario.php">Clientes</a>
+							</li>
+							
+							<li class="nav-item pr-3">
+								<a class="nav-link" href="traje_tela_funcionario.php">Trajes</a>
 							</li>
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="funcao.php">Funções</a>
-							</li>
-
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="cliente.php">Clientes</a>
-							</li>
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="fornecedor.php">Fornecedores</a>
-							</li>
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="traje.php">Trajes</a>
-							</li>
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="aluguel.php">Aluguel</a>
+								<a class="nav-link" href="aluguel_tela_funcionario.php">Aluguel</a>
 							</li>
 							<li class="nav-item pr-3">
 								<a class="nav-link" href="logout.php">Sair</a>
@@ -119,107 +103,92 @@ require "valida_session.php";
 			</header>
 
 		<section id="formulario">
-			<div class="container">
+			<div class="container" >
 
-				<form method="POST" action="processaaluguel.php"> 
-					
+				<form method="POST" action="processaclientes_restricao.php"> 
+					<!-- formatar mascaras -->
+							<script type="text/javascript">
+									$("#telefone").mask("(00)0000-0000");
+    								$("#cep").mask("00000-000");
+    								$("#cpf").mask("000.000.000-00");
+    								
+    							</script>
 
 
 					<div class="col-md-12">
-						<h1>Aluguel</h1>
-						<p>Preencha os campos abaixo para o cadastro do aluguel.</p>
+						<h1>Clientes</h1>
+						<p>Preencha os campos abaixo para o cadastro do cliente.</p>
 					</div>
 					<div class="row">
 						<!-- dados pessoais -->
 						<div class="col-md-6">
 							<div class="form-group">
-								<label >Descrição*</label>
-								<input type="text" name="descricao" value="" class="form-control" id="descricao"required>
+								<label >Nome*</label>
+								<input type="text" name="nome" value="" class="form-control" id="nome"required>
                             </div>
-
-
-                           
+                             <div class="form-group">
+							    <label>Endereço completo*</label>
+							    <input type="text" name="endereco" value="" class="form-control" id="endereco" required>
+                            </div>
 
                             <div class="form-group">
-								<label>Valor*</label>
-								<input type="text" name="valor" value="" class="form-control" id="valor" required>
+								<label>Celular*</label>
+								<input type="text" name="telefone" value="" class="form-control" id="telefone" required>
                             </div>
-                            
+
                             <div class="form-group">
-								<label>Desconto*</label>
-								<input type="text" name="desconto" value="" class="form-control" id="desconto" required>
+									<label>Data de nascimento</label>
+									<input type="date" name="dataNascimento" value="" class="form-control" id="dataNascimento" >
                             </div>
                             
+
                             
-							<div class="form-group">
-							    <label>Valor Final*</label>
-							    <input type="text" name="valorFinal" value="" class="form-control" id="valorFinal" required>
-                            </div>
-
-
-                           
-
-							
                             
                             					
                         </div>
 
                         <!--div da direita-->
  						<div class="col-md-6">
-																	
-                         <div class="form-group">
-									<label>Data*</label>
-									<input type="date" name="data" value="" class="form-control" id="data" required>
-							</div>			
-								
-																
-									<div class="form-group">
-									<label>Funcionario*</label>
+
+                           
+							
+							
+                            <div class="form-group">
+								<label>CPF*</label>
+								<input type="text" name="cpf" value="" class="form-control" id="cpf" required>
+                            </div>
+                            <div class="form-group">
+								<label>CEP*</label>
+								<input type="text" name="cep" value="" class="form-control" id="cep" required>
+                            </div>
+                           
+                            <div class="form-group">
+								<label>E-mail*</label>
+								<input type="text" name="email" value="" class="form-control" id="email" required>
+                            </div>
+							<div class="form-group">
+									<label>Funcionário*</label>
 										<select name="funcionario">
 											<?php
 												$sql = "select * from funcionarios";
-												$resultado_funcionario = mysqli_query($conn, $sql);
-												while( $dados = mysqli_fetch_array($resultado_funcionario)){
+												$resultado_funcionarios = mysqli_query($conn, $sql);
+												while( $dados = mysqli_fetch_array($resultado_funcionarios)){
 													$codigo = $dados['idFuncionario'];
 													$funcionario = $dados['nome'];
 													echo "<option value=$codigo>$funcionario</option>";	
 												}
 											?>
 										</select>
-									</div>
-                                    <div class="form-group">
-									<label>Cliente*</label>
-										<select name="cliente">
-											<?php
-												$sql = "select * from clientes";
-												$resultado_cliente = mysqli_query($conn, $sql);
-												while( $dados = mysqli_fetch_array($resultado_cliente)){
-													$codigo = $dados['idClientes'];
-													$cliente = $dados['nome'];
-													echo "<option value=$codigo>$cliente</option>";	
-												}
-											?>
-										</select>
-									</div>
-                                    <div class="form-group">
-									<label>Traje*</label>
-										<select name="traje">
-											<?php
-												$sql = "select * from trajes";
-												$resultado_traje = mysqli_query($conn, $sql);
-												while( $dados = mysqli_fetch_array($resultado_traje)){
-													$codigo = $dados['idTrajes'];
-													$traje = $dados['nome'];
-													echo "<option value=$codigo>$traje</option>";	
-												}
-											?>
-										</select>
-									</div>
+                                    </div>
+                                    
+													
+								
+							
 								<!-- campos obrigatórios -->	
 								<div class="col-md-6 text-center mx-auto d-block" style="padding-top: 5px;">
 								<p>Verifique os campos assinalados</p>  
 								<p>* CAMPO OBRIGATÓRIO</p>
-								<button class="btn" type="submit" id="btn-enviar-contato" style="background-color: #091b29; color:#97a1a8; ">Cadastrar Aluguel</button>
+								<button class="btn" type="submit" id="btn-enviar-contato" style="background-color: #091b29; color:#97a1a8; ">Cadastrar Cliente</button>
 								
 
 							</div>
@@ -240,7 +209,7 @@ require "valida_session.php";
              <legend>
               <table>
                  <tr>
-                    <td><h4>Gerenciar Aluguéis</h4></a></td>
+                    <td><h4>Gerenciar Clientes</h4></a></td>
                  </tr>
               </table>
              </legend>
@@ -249,8 +218,9 @@ require "valida_session.php";
                    <tr class="tr">
                     <td class="tabletd">Editar</td>
                     <td class="tabletd">Excluir</td>
-                    <td class="tabletd">Traje</td>
-                    <td class="tabletd">Código</td>
+                    <td class="tabletd">Nome</td>
+                    <td class="tabletd">Telefone</td>
+                    <td class="tabletd">Endereço</td>
                    
                     
                    
@@ -258,7 +228,7 @@ require "valida_session.php";
                    <?php
                         include "funcoesbd.php";
                         $conexao = conecta_bd();
-                        lista_aluguel_bd ($conexao);
+                        lista_clientes_bd ($conexao);
                    ?>
                  </table>
             </article>

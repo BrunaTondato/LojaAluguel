@@ -1,3 +1,9 @@
+<?php
+	require "valida_session.php";
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -68,7 +74,7 @@
 								<a class="nav-link" href="aluguel.php">Aluguel</a>
 							</li>
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="login.php">Sair</a>
+								<a class="nav-link" href="logout.php">Sair</a>
 							</li>
 						</ul>
 					</div>

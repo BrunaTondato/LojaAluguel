@@ -20,10 +20,11 @@ require "valida_session.php";
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<!-- usada para reconhecer o bodstrap  é a tag mais importante a largura do site será igual a largura do dispositivo-->
 
-	 <!-- css -->
+	  <!-- css -->
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/all.css">
-	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="css/eventoEstilo.css">	
+	<link rel="stylesheet" href="css/login-funcionario.css">	
 	
 	
 	<!-- JAVASCRIPT -->
@@ -80,28 +81,18 @@ require "valida_session.php";
 						<ul class="navbar-nav mr-auto">
 
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="sistema.php">Inicio</a>
+								<a class="nav-link" href="sistema_funcionario.php">Inicio</a>
 							</li>
 
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="funcionario.php">Funcionários</a>
-								
+								<a class="nav-link" href="cliente_tela_funcionario.php">Clientes</a>
+							</li>
+							
+							<li class="nav-item pr-3">
+								<a class="nav-link" href="traje_tela_funcionario.php">Trajes</a>
 							</li>
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="funcao.php">Funções</a>
-							</li>
-
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="cliente.php">Clientes</a>
-							</li>
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="fornecedor.php">Fornecedores</a>
-							</li>
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="traje.php">Trajes</a>
-							</li>
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="aluguel.php">Aluguel</a>
+								<a class="nav-link" href="aluguel_tela_funcionario.php">Aluguel</a>
 							</li>
 							<li class="nav-item pr-3">
 								<a class="nav-link" href="logout.php">Sair</a>
@@ -121,7 +112,7 @@ require "valida_session.php";
 		<section id="formulario">
 			<div class="container">
 
-				<form method="POST" action="processaaluguel.php"> 
+				<form method="POST" action="processaaluguel_restricao.php"> 
 					
 
 

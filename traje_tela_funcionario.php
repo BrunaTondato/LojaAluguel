@@ -1,12 +1,8 @@
 <!-- variavel global php para apresntar o erro ao usr -->
-<!-- variavel global php para apresntar o erro ao usr -->
 <?php
 //session usada para o aviso se cadastrou com sucesso
-session_start();
-include_once("conexao.php");
 require "valida_session.php";
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,7 +19,8 @@ require "valida_session.php";
 	 <!-- css -->
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/all.css">
-	<link rel="stylesheet" href="css/estilo.css">
+	<link rel="stylesheet" href="css/eventoEstilo.css">	
+	<link rel="stylesheet" href="css/login-funcionario.css">	
 	
 	
 	<!-- JAVASCRIPT -->
@@ -38,7 +35,7 @@ require "valida_session.php";
 	
 	<link rel="shortcut icon" href="imagens/logo.png">
 
-	<!-- script utilizado para validar campo senha e confirma senha se são iguais 
+	<!-- script utilizado para validar campo senha e confirma senha se são iguais -->
 			<script language="javascript">
             function valida_dados(){
                  if(form.confsenha.value != form.senha.value)
@@ -48,7 +45,7 @@ require "valida_session.php";
                         return false;
                      }
             }
-            </script>-->
+            </script>
 
 
     <body>
@@ -80,28 +77,18 @@ require "valida_session.php";
 						<ul class="navbar-nav mr-auto">
 
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="sistema.php">Inicio</a>
+								<a class="nav-link" href="sistema_funcionario.php">Inicio</a>
 							</li>
 
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="funcionario.php">Funcionários</a>
-								
+								<a class="nav-link" href="cliente_tela_funcionario.php">Clientes</a>
+							</li>
+							
+							<li class="nav-item pr-3">
+								<a class="nav-link" href="traje_tela_funcionario.php">Trajes</a>
 							</li>
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="funcao.php">Funções</a>
-							</li>
-
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="cliente.php">Clientes</a>
-							</li>
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="fornecedor.php">Fornecedores</a>
-							</li>
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="traje.php">Trajes</a>
-							</li>
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="aluguel.php">Aluguel</a>
+								<a class="nav-link" href="aluguel_tela_funcionario.php">Aluguel</a>
 							</li>
 							<li class="nav-item pr-3">
 								<a class="nav-link" href="logout.php">Sair</a>
@@ -121,61 +108,55 @@ require "valida_session.php";
 		<section id="formulario">
 			<div class="container">
 
-				<form method="POST" action="processaaluguel.php"> 
+				<form method="POST" action="processatraje_restricao.php"> 
 					
 
 
 					<div class="col-md-12">
-						<h1>Aluguel</h1>
-						<p>Preencha os campos abaixo para o cadastro do aluguel.</p>
+						<h1>Trajes</h1>
+						<p>Preencha os campos abaixo para o cadastro de trajes.</p>
 					</div>
 					<div class="row">
 						<!-- dados pessoais -->
 						<div class="col-md-6">
 							<div class="form-group">
-								<label >Descrição*</label>
-								<input type="text" name="descricao" value="" class="form-control" id="descricao"required>
+								<label >Código*</label>
+								<input type="text" name="idTrajes" value="" class="form-control" id="idTrajes"required>
                             </div>
 
-
-                           
-
-                            <div class="form-group">
-								<label>Valor*</label>
-								<input type="text" name="valor" value="" class="form-control" id="valor" required>
-                            </div>
-                            
-                            <div class="form-group">
-								<label>Desconto*</label>
-								<input type="text" name="desconto" value="" class="form-control" id="desconto" required>
-                            </div>
-                            
-                            
+						
 							<div class="form-group">
-							    <label>Valor Final*</label>
-							    <input type="text" name="valorFinal" value="" class="form-control" id="valorFinal" required>
+								<label >Nome*</label>
+								<input type="text" name="nome" value="" class="form-control" id="nome"required>
                             </div>
 
 
                            
 
-							
+                            <div class="form-group">
+								<label>Descrição*</label>
+								<input type="text" name="descricao" value="" class="form-control" id="descricao" required>
+                            </div>
                             
-                            					
+                           
+                            <div class="form-group">
+								<label class="form-check-label" for="status">Status*:</label>
+								<p><input type="radio" name="status" value="disponivel"> Disponivel
+						        <input type="radio" name="status" value="alugado"> Alugado
+                           		<input type="radio" name="status" value="lavando"> Lavando
+                            </div>
+				
+           				
                         </div>
 
                         <!--div da direita-->
  						<div class="col-md-6">
-																	
-                         <div class="form-group">
-									<label>Data*</label>
-									<input type="date" name="data" value="" class="form-control" id="data" required>
-							</div>			
-								
-																
+							
+											
+
 									<div class="form-group">
 									<label>Funcionario*</label>
-										<select name="funcionario">
+										<select name="tipofuncionario">
 											<?php
 												$sql = "select * from funcionarios";
 												$resultado_funcionario = mysqli_query($conn, $sql);
@@ -188,29 +169,15 @@ require "valida_session.php";
 										</select>
 									</div>
                                     <div class="form-group">
-									<label>Cliente*</label>
-										<select name="cliente">
+									<label>Fornecedor*</label>
+										<select name="tipofornecedor">
 											<?php
-												$sql = "select * from clientes";
-												$resultado_cliente = mysqli_query($conn, $sql);
-												while( $dados = mysqli_fetch_array($resultado_cliente)){
-													$codigo = $dados['idClientes'];
-													$cliente = $dados['nome'];
-													echo "<option value=$codigo>$cliente</option>";	
-												}
-											?>
-										</select>
-									</div>
-                                    <div class="form-group">
-									<label>Traje*</label>
-										<select name="traje">
-											<?php
-												$sql = "select * from trajes";
-												$resultado_traje = mysqli_query($conn, $sql);
-												while( $dados = mysqli_fetch_array($resultado_traje)){
-													$codigo = $dados['idTrajes'];
-													$traje = $dados['nome'];
-													echo "<option value=$codigo>$traje</option>";	
+												$sql = "select * from fornecedores";
+												$resultado_fornecedor = mysqli_query($conn, $sql);
+												while( $dados = mysqli_fetch_array($resultado_fornecedor)){
+													$codigo = $dados['idFornecedores'];
+													$fornecedor = $dados['nome'];
+													echo "<option value=$codigo>$fornecedor</option>";	
 												}
 											?>
 										</select>
@@ -219,7 +186,7 @@ require "valida_session.php";
 								<div class="col-md-6 text-center mx-auto d-block" style="padding-top: 5px;">
 								<p>Verifique os campos assinalados</p>  
 								<p>* CAMPO OBRIGATÓRIO</p>
-								<button class="btn" type="submit" id="btn-enviar-contato" style="background-color: #091b29; color:#97a1a8; ">Cadastrar Aluguel</button>
+								<button class="btn" type="submit" id="btn-enviar-contato" style="background-color: #091b29; color:#97a1a8; ">Cadastrar Traje</button>
 								
 
 							</div>
@@ -240,7 +207,7 @@ require "valida_session.php";
              <legend>
               <table>
                  <tr>
-                    <td><h4>Gerenciar Aluguéis</h4></a></td>
+                    <td><h4>Gerenciar Traje</h4></a></td>
                  </tr>
               </table>
              </legend>
@@ -249,8 +216,8 @@ require "valida_session.php";
                    <tr class="tr">
                     <td class="tabletd">Editar</td>
                     <td class="tabletd">Excluir</td>
-                    <td class="tabletd">Traje</td>
-                    <td class="tabletd">Código</td>
+                    <td class="tabletd">Nome</td>
+                    <td class="tabletd">Descrição</td>
                    
                     
                    
@@ -258,7 +225,7 @@ require "valida_session.php";
                    <?php
                         include "funcoesbd.php";
                         $conexao = conecta_bd();
-                        lista_aluguel_bd ($conexao);
+                        lista_trajes_bd ($conexao);
                    ?>
                  </table>
             </article>
@@ -327,4 +294,3 @@ require "valida_session.php";
 </body>
     </head>
 			</html>
-

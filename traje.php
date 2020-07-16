@@ -1,8 +1,7 @@
 <!-- variavel global php para apresntar o erro ao usr -->
 <?php
 //session usada para o aviso se cadastrou com sucesso
-session_start();
-include_once("conexao.php");
+require "valida_session.php";
 ?>
 
 <!DOCTYPE html>
@@ -101,7 +100,7 @@ include_once("conexao.php");
 								<a class="nav-link" href="aluguel.php">Aluguel</a>
 							</li>
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="login.php">Sair</a>
+								<a class="nav-link" href="logout.php">Sair</a>
 							</li>						
 						</ul>
 					</div>

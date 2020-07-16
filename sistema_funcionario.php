@@ -1,3 +1,9 @@
+<?php
+	require "valida_session.php";
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -13,8 +19,9 @@
 	 <!-- css -->
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<link rel="stylesheet" href="css/all.css">
-	<link rel="stylesheet" href="css/estilo.css">
 	<link rel="stylesheet" href="css/eventoEstilo.css">	
+	<link rel="stylesheet" href="css/login-funcionario.css">	
+		
 	
 	<!-- JAVASCRIPT -->
 	<script src="js/jquery.js"></script>
@@ -44,31 +51,21 @@
 						<ul class="navbar-nav mr-auto">
 
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="sistema.html">Inicio</a>
+								<a class="nav-link" href="sistema_funcionario.php">Inicio</a>
 							</li>
 
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="funcionario.php">Funcionários</a>
-								
+								<a class="nav-link" href="cliente_tela_funcionario.php">Clientes</a>
+							</li>
+							
+							<li class="nav-item pr-3">
+								<a class="nav-link" href="traje_tela_funcionario.php">Trajes</a>
 							</li>
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="funcao.php">Funções</a>
-							</li>
-
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="cliente.php">Clientes</a>
+								<a class="nav-link" href="aluguel_tela_funcionario.php">Aluguel</a>
 							</li>
 							<li class="nav-item pr-3">
-								<a class="nav-link" href="fornecedor.php">Fornecedores</a>
-							</li>
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="traje.php">Trajes</a>
-							</li>
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="aluguel.php">Aluguel</a>
-							</li>
-							<li class="nav-item pr-3">
-								<a class="nav-link" href="login.php">Sair</a>
+								<a class="nav-link" href="logout.php">Sair</a>
 							</li>
 						</ul>
 					</div>
@@ -97,35 +94,24 @@
 			</div>
 				</form>
 		<div class="row">
-			<div class="col-md-4">
-				<h5 class="text-center">Funcionários</h5>
-				<a href="funcionario.php"><img src="./imagens/funcionario.jpg" alt="" width="70%" class="mx-auto d-block"></a>
-			</div>
-			<div class="col-md-4">
-				<h5 class="text-center">Funções</h5>
-				<a href="funcao.php"><img src="./imagens/funcao.jpg" alt="" width="70%" class="mx-auto d-block"></a>
-			</div>
+			
 			<div class="col-md-4">
 				<h5 class="text-center">Clientes</h5>
-				<a href="cliente.php"><img src="./imagens/cliente.jpg" alt="" width="70%" class="mx-auto d-block"></a>
+				<a href="cliente_tela_funcionario.php"><img src="./imagens/cliente.jpg" alt="" width="70%" class="mx-auto d-block"></a>
 			</div>
-		</div>
-		<div class="row" id="imgs">
-			<div class="col-md-4">
-				<h5 class="text-center">Fornecedores</h5>
-				<a href="fornecedor.php"><img src="./imagens/fornecedores.jpg" alt="" width="70%" class="mx-auto d-block"></a>
-			</div>
+		
+		
 
 			<div class="col-md-4">
 				<h5 class="text-center">Trajes</h5>
-				<a href="traje.php"><img src="./imagens/trajes.jpg" alt="" width="70%" class="mx-auto d-block"></a>
+				<a href="traje_tela_funcionario.php"><img src="./imagens/trajes.jpg" alt="" width="70%" class="mx-auto d-block"></a>
 			</div>
 
 			<div class="col-md-4">
 				<h5 class="text-center">Aluguel</h5>
-				<a href="aluguel.php"><img src="./imagens/aluguel.jpg" alt="" width="70%" class="mx-auto d-block"></a>
+				<a href="aluguel_tela_funcionario.php"><img src="./imagens/aluguel.jpg" alt="" width="70%" class="mx-auto d-block"></a>
 			</div>
-		</div> <!-- fim imagens -->
+		
 			</div>
 		</section>
         <!-- fim header -->
@@ -171,7 +157,8 @@
         </footer>
         <!-- fim footer -->
 		<div class="copyright no-margin">
-			<p id="copyright" style="color:#fff">Copyright 2020 - by Bruna Amorim e Natália Paulino</p> 
+			<p id="copyright" style="color:#fff">Copyright 2020 </p> 
+			<p>By Bruna Amorim e Natália Paulino</p>
 		</div>
 				<a href="#top" class="fas fa-angle-double-up"></a>
 						<!-- criando uma function para o icon fas fa-angle-double-up levar o usuário ao topo da pagina -->
